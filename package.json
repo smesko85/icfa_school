@@ -1,0 +1,48 @@
+{
+  "name": "icfa-school",
+  "description": "The best project ever..",
+  "version": "0.1.0",
+  "homepage": "https://github.com/smesko85/icfa-school",
+  "author": {
+    "name": "Vladimir Dumitraskovic",
+    "url": "http://github.com/smesko85/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/smesko85/icfa-school.git"
+  },
+  "bugs": {
+    "url": "https://github.com/smesko85/icfa-school/issues"
+  },
+  "engines": {
+    "node": ">=0.8"
+  },
+  "scripts": {
+    "test": "grunt assemble"
+  },
+  "devDependencies": {
+    "assemble": "~0.4.33",
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-connect": "~0.6.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "load-grunt-tasks": "~0.2.1",
+    "time-grunt": "~0.2.7",
+    "assemble-contrib-permalinks": "*",
+    "assemble-contrib-sitemap": "*"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/smesko85/icfa-school/blob/master/LICENSE-MIT"
+    }
+  ],
+  "keywords": [
+    "assemble",
+    "templates",
+    "handlebars",
+    "site generator",
+    "site builder",
+    "grunt"
+  ]
+}
