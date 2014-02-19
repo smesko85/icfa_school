@@ -1,9 +1,22 @@
 ---
 title: Topics
 sort: 4
-posts: ['src/content/Topics.md']
+posts: ['src/content/Topics - Review.md','src/content/Topics - Lectures.md','src/content/Topics - Laboratories.md']
 ---
-
-{{#each posts}}
-  {{md this}}
-{{/each}}
+<div class="jumbotron row">
+  <img class="col-sm-6 img-responsive img-rounded" src="http://placehold.it/600x300" alt="Really cool image">
+  <div class="col-sm-6">
+    <h1>{{ title }}</h1>
+    <p>This is a Assemble Generator template using <a href="http://getbootstrap.com">Bootstrap</a>. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+    <p><a href="blog.html" class="btn btn-warning btn-lg col-xs-6 col-xs-offset-6 col-md-4 col-md-offset-8" role="button">Sign up &raquo;</a></p>
+  </div>
+</div>
+<section id="main">
+  <div class="row">
+    {{#each posts}}
+    <article class="col-sm-4">
+      {{md this }}
+    </article>
+    {{/each}}
+  </div>
+</section>
