@@ -14,7 +14,7 @@ h1, h2, h3, {
 
 /* Colors */
 body{
-    background: white;    
+    background: #ebf0f9;    
 }
 
 .jumbotron{
@@ -79,14 +79,27 @@ body {
 /* Title */
 .navbar-brand{
     font-weight: bold;
-    font-size: 1.5em;
-    line-height: 2em;
+    font-size: 1.3em;
+    line-height: 1.2em;
     margin-top:2px;
     margin-bottom:2px;
     margin-left:5px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
     padding:0;
-    max-width:40%;
+    max-width:30%;
+}
+@media (min-width: 345px) {
+    .navbar-brand{
+      max-width:50%;
+      line-height:2.5em;
+    }
+}
+@media (min-width: 425px) {
+    .navbar-brand{
+      font-size: 2em;
+      line-height: 1.5em;
+      max-width:60%;
+    }
 }
 
 @media (min-width: 768px) and (max-width: 991px){ 
@@ -113,7 +126,7 @@ body {
     }
     
     .navbar-header{
-        
+        margin-bottom: 2em; 
     }
 }
 
@@ -128,9 +141,10 @@ body {
     }
     
     .navbar-header{
-        
+        margin-bottom: 3em;
     }
 }
+
 /* Nav */
 .navbar {
 /*    padding-top:16px;*/
@@ -142,24 +156,33 @@ body {
 }
 
 .navbar-nav > li > a {
-    padding-top:10px;
-    padding-bottom:10px;
+   /* padding-top:10px;
+    padding-bottom:10px;*/
 }
 
 @media (min-width: 768px){ 
+    .navbar-collapse{
+     /* margin-bottom: 3em;*/
+      text-align:center;
+    }
     .navbar{
         padding-left:20px;
         padding-right:20px;
     }
     
     .navbar-nav{
-        position:absolute;
-        top:auto;
+       /* top:auto;
         bottom:0;
         left:auto;
-        right:50px;
-        margin-top:0;
-        margin-bottom:0;
+        right:auto;
+        margin-left:auto;
+        margin-right:auto;
+        width:auto;
+        margin-top:0;*/
+        margin-bottom:-0.4em;
+        display: inline-block;
+        float: none;
+       	font-size:0.8em;
     }
     
     
@@ -169,13 +192,28 @@ body {
         background: #a3bae3;
         border: 1px solid rgba(255,255,255,0.2);
         border-bottom:none;
+	
     }
     
     .navbar-default .navbar-nav > li > a:hover {
         background-color: #ebf0f9; 
     }
-   
+ 
+    .navbar-nav > li > a {
+      	padding: 3px 10px;
+    }
     
+}
+
+@media (min-width: 992px){ 
+    .navbar-nav {
+      font-size: 1.2em;
+      margin-bottom: -0.25em;
+    }
+
+    .navbar-nav > li > a {
+      padding: 8px 10px;
+    }
 }
 
 /* Nav tab active color */

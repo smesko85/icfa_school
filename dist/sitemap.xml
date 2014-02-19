@@ -1,20 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://github.com/smesko85/icfa-school/dist/blog.html</loc>
-    <lastmod>2014-02-17T11:12:34.774Z</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://github.com/smesko85/icfa-school/dist/contact.html</loc>
-    <lastmod>2014-02-17T11:12:34.774Z</lastmod>
+    <lastmod>2014-02-18T20:26:48.938Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://github.com/smesko85/icfa-school/dist/index.html</loc>
-    <lastmod>2014-02-17T11:12:34.774Z</lastmod>
+    <lastmod>2014-02-18T20:26:48.938Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://github.com/smesko85/icfa-school/dist/links.html</loc>
+    <lastmod>2014-02-18T20:26:48.939Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://github.com/smesko85/icfa-school/dist/registration.html</loc>
+    <lastmod>2014-02-18T20:26:48.939Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://github.com/smesko85/icfa-school/dist/scope.html</loc>
+    <lastmod>2014-02-18T20:26:48.939Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://github.com/smesko85/icfa-school/dist/sponsors.html</loc>
+    <lastmod>2014-02-18T20:26:48.939Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://github.com/smesko85/icfa-school/dist/topics.html</loc>
+    <lastmod>2014-02-18T20:26:48.939Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://github.com/smesko85/icfa-school/dist/travel.html</loc>
+    <lastmod>2014-02-18T20:26:48.939Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://github.com/smesko85/icfa-school/dist/venue.html</loc>
+    <lastmod>2014-02-18T20:26:48.939Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://github.com/smesko85/icfa-school/dist/zblog.html</loc>
+    <lastmod>2014-02-18T20:26:48.939Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

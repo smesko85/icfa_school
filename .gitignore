@@ -12,7 +12,11 @@ pids
 logs
 results
 
+npm-cache
+
 npm-debug.log
 node_modules
 
 *.sublime-*
+
+*~
