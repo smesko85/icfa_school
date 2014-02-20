@@ -1,9 +1,27 @@
 ---
 title: Venue
 sort: 3
-posts: ['Venue.md']
+posts: ['src/content/Venue - UNS.md', 'src/content/Venue - NS.md']
 ---
-<h1>{{title}}</h1>
-{{#each posts}}
-  {{md this}}
-{{/each}}
+<div class="jumbotron row">
+  <img class="col-sm-6 img-responsive img-rounded" src="http://placehold.it/600x300" alt="Really cool image">
+  <div class="col-sm-6">
+      {{#markdown}}
+
+# Venue
+
+The Danube School on Instrumentation in Elementary Particle & Nuclear Physics will be held at [University of Novi Sad](http://www.uns.ac.rs/en) campus. Campus is located in south-east part of Novi Sad...
+
+      {{/markdown}}
+  </div>
+</div>
+
+<section id="main">
+  <div class="row">
+    {{#each posts}}
+    <article class="col-sm-6">
+      {{md this }}
+    </article>
+    {{/each}}
+  </div>
+</section>

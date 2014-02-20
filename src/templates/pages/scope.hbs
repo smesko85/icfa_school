@@ -1,9 +1,27 @@
 ---
 title: Scope
 sort: 2
-posts: ['Scope.md']
+posts: ['src/content/Scope - History.md','src/content/Scope - Formula.md','src/content/Scope - Attendance.md']
 ---
-<h1>{{title}}</h1>
-{{#each posts}}
-  {{md this}}
-{{/each}}
+<div class="jumbotron row">
+  <img class="col-sm-6 img-responsive img-rounded" src="http://placehold.it/600x300" alt="Really cool image">
+  <div class="col-sm-6">
+      {{#markdown}}
+
+# Scope
+
+The ICFA schools started in 1987 at the International Center of Theoretical Physics (ICTP) of Trieste. The aim of the school was to share the expertise in new detector technologies with physicists from less developed countries guests of the ITCP. After that very positive experience, reproduced in 1989 again in Trieste, the school started to be organized abroad, in sites located outside the highly industrialized parts of the world. 
+
+      {{/markdown}}
+  </div>
+</div>
+
+<section id="main">
+  <div class="row">
+    {{#each posts}}
+    <article class="col-sm-4">
+      {{md this }}
+    </article>
+    {{/each}}
+  </div>
+</section>
