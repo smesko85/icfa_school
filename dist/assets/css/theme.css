@@ -95,7 +95,7 @@ margin: 5px 0;
     background-image: url('http://placehold.it/64x64');
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     /*
     width: 48px;
     height: 48px;
@@ -109,7 +109,15 @@ margin: 5px 0;
 }
 
 .logo.pmf {
-    background-image: url('../img/logo-pmf.png');
+    background-image: url('../img/logo-pmf.jpg');
+}
+
+.logo.uns {
+    background-image: url('../img/logo-uns.jpg');
+}
+
+.logo.ftn {
+    background-image: url('../img/logo-ftn.jpg');
 }
 
 .logo.ecfa, .logo.icfa{
@@ -185,6 +193,10 @@ margin: 5px 0;
     .logo.icfa{
         width: 107px;
     }
+    
+    .logo.ftn{
+        width: 59px;
+    }
 }
 
 @media (min-width: 992px){
@@ -206,6 +218,10 @@ margin: 5px 0;
     .logo.icfa{
         width: 161px;
     }
+    
+    .logo.ftn{
+        width: 90px;
+    }
 }
 
 @media (min-width: 1200px){
@@ -226,6 +242,10 @@ margin: 5px 0;
     
     .logo.icfa{
         width: 202px;
+    }
+    
+     .logo.ftn{
+        width: 115px;
     }
 }
 /* Title *******************************************************************************/
