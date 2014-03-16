@@ -14,7 +14,7 @@ h1, h2, h3, #main h1, #main h2, #main h3{
 }
 
 .navbar-nav > li > a {
-    text-shadow: 0 -0.1em 0 rgba(127,127,127,0.5), 0 0 0 rgba(255,255,255,0.8);
+    text-shadow: 0 -0.1em 0.2em rgba(127,127,127,0.5), 0 0.1em 0.2em rgba(255,255,255,0.5);  
 }
 
 /* Colors *********************************************************************/
@@ -521,6 +521,7 @@ margin: 5px 0;
 .jumbotron img{
     border: 15px solid rgba(255,255,255,0.7);
     padding:0;
+    box-shadow: 0 0 1px black;
 }
 
 /* Main content ******************************************************************************/
@@ -552,6 +553,13 @@ margin: 5px 0;
     font-size: 1.5em;
     text-shadow:none;
 }
+/* Images
+*********************************************************************************/
+
+.jumbotron img {
+    height:auto;    
+}
+
 /* Home page *********************************************************************************/
 #home-hero {
     background: url('../img/56.jpg');
