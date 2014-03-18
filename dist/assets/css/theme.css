@@ -2,10 +2,22 @@
 @import url(http://fonts.googleapis.com/css?family=Kreon:300,400,700);
 @import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
 
-h1, h2, h3, #main h1, #main h2, #main h3{
+body {
+    font-size: 18px;
+}
+
+h1, h2, #main h1, #main h2, #main h3{
     color: #647fb4;
     text-shadow: -0.05em -0.05em 1px rgba(0, 0, 0, 0.8);
     font-variant-numeric: ordinal;
+}
+
+#contact ~ section h4 {
+    font-size: 130%;
+}
+
+#contact ~ p {
+    font-size: 120%;
 }
 
 .jumbotron h1{
@@ -16,6 +28,7 @@ h1, h2, h3, #main h1, #main h2, #main h3{
 .navbar-nav > li > a {
     text-shadow: 0 -0.1em 0.2em rgba(127,127,127,0.5), 0 0.1em 0.2em rgba(255,255,255,0.5);  
 }
+
 
 /* Colors *********************************************************************/
 body{
@@ -203,7 +216,7 @@ margin: 5px 0;
     .header-logos{
         padding-top:20px;
         padding-bottom:4em;
-        margin-bottom:-3.4em;
+        margin-bottom:-2.6em;
     }
 
     .logo{
@@ -227,7 +240,7 @@ margin: 5px 0;
 @media (min-width: 1200px){
     .header-logos{
         padding-top:20px;
-        padding-bottom:6em;
+        padding-bottom:4em;
     }
 
     .logo{
@@ -251,7 +264,7 @@ margin: 5px 0;
 /* Title *******************************************************************************/
 .header-title{
     padding:0;
-    max-width:120px;
+    max-width:130px;
     float:none;
     display:inline-block;
     position: absolute;
@@ -261,7 +274,7 @@ margin: 5px 0;
 }
 .header-title .navbar-brand{
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 1em;
     line-height: 0.9em;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
     text-align:left;
@@ -289,7 +302,7 @@ margin: 5px 0;
 
 @media (min-width: 320px) {
     .header-title .navbar-brand{
-        font-size:1.2em;
+        font-size:1.1em;
         line-height:1.2em;
     }
 
@@ -301,8 +314,8 @@ margin: 5px 0;
 
 @media (min-width: 420px) {
     .header-title .navbar-brand{
-        font-size:1.3em;
-        line-height:1.2em;
+        font-size:1.2em;
+        line-height:1.1em;
     }
 
     .header-title{
@@ -313,11 +326,11 @@ margin: 5px 0;
 
 @media (min-width: 480px) {
     .header-title .navbar-brand{
-        line-height:1.2em;
+        line-height:1.1em;
     }
 
     .header-title{
-        top:10px;
+/*        top:10px;*/
         left: 97px;
         max-width: 300px;
     }
@@ -325,7 +338,7 @@ margin: 5px 0;
 
 @media (min-width: 560px) {
     .header-title .navbar-brand{
-        font-size: 1.8em;
+        font-size: 1.4em;
         line-height: 1.4em;
     }
 
@@ -404,10 +417,11 @@ margin: 5px 0;
         /*        padding-right:20px;*/
         box-shadow: inset 0 -5px 2px -2px rgba(0,0,0,0.3);
     }
-    .navbar-nav > li > a {
+    .navbar-default .navbar-nav > li > a {
         /* padding-top:10px;
         padding-bottom:10px;*/
         box-shadow: inset 0 -3px 2px -2px rgba(0,0,0,0.3), 3px -3px 3px rgba(0,0,0,0.4);
+        padding:3px;
     }
     .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover {
         box-shadow: 5px -5px 4px rgba(0,0,0,0.2);
@@ -453,11 +467,23 @@ margin: 5px 0;
 
 }
 
-@media (min-width: 992px){ 
+@media (min-width: 901px){ 
     .navbar-nav {
-        font-size: 1.3em;
+        font-size: 1em;
         /*        margin:0 -15px;*/
         /*        margin-bottom: -0.25em;*/
+    }
+
+    .navbar-default .navbar-nav > li > a {
+        padding: 8px 4px;
+    }
+}
+
+@media (min-width: 992px){ 
+    .navbar-nav {
+        font-size: 1.1em;
+/*        margin:0 2em;*/
+/*                margin-bottom: -0.25em;*/
     }
 
     .navbar-nav > li > a {
@@ -467,12 +493,30 @@ margin: 5px 0;
 
 @media (min-width: 1200px){ 
     .navbar-nav {
-        font-size: 1.5em;
+        font-size: 1em;
         /*        margin:0 -15px;*/
         /*        margin-bottom: -0.25em;*/
     }
 
-    .navbar-nav > li > a {
+    .navbar-default .navbar-nav > li > a {
+        padding: 10px 15px;
+
+    }
+    
+    .navbar-nav > li {
+        
+    }
+
+}
+
+@media (min-width: 1350px){ 
+    .navbar-nav {
+        font-size: 1.3em;
+        /*        margin:0 -15px;*/
+        /*        margin-bottom: -0.25em;*/
+    }
+
+    .navbar-default .navbar-nav > li > a {
         padding: 10px 15px;
 
     }
@@ -539,6 +583,16 @@ margin: 5px 0;
 #main h2 > small{
     color:inherit;
 }
+
+#main article{
+    margin-bottom:3em;
+}
+
+#main article h2{
+    border-left: 10px solid rgba(0,0,0,0.3);
+    padding-left: 5px;
+}
+
 /* Footer *************************************************************************************/
 #footer {
     font-size: 0.8em;
@@ -599,7 +653,7 @@ margin: 5px 0;
 
 
 /* Scope *************************************************************************************/
-#school-history ~ ol {
+#so-far-the-schools-were-held-as-follows ~ ol {
     list-style: upper-roman;
 }
 
@@ -628,4 +682,23 @@ margin: 5px 0;
     margin-bottom: 0.5em;
     display: inline-block;
     */
+}
+
+/* Contact **************************************************************************************/
+#contact {
+    margin-top:1.3em;
+    margin-bottom:1em;
+}
+
+#contact ~ h3{
+    margin-top: 1.5em;
+    margin-bottom:1em;
+}
+
+#contact ~ div article{
+    border: 1px solid black;
+    margin: 1em;
+    padding: 0.5em;
+    overflow: hidden;
+    background: rgba(255,255,255,0.6);
 }

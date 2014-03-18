@@ -1,7 +1,8 @@
 ---
 title: Scope
 sort: 2
-posts: ['src/content/Scope - History.md','src/content/Scope - Formula.md','src/content/Scope - Attendance.md']
+posts1: ['src/content/Scope - Goals.md','src/content/Scope - Formula.md','src/content/Scope - Attendance.md']
+posts2: ['src/content/Scope - History.md','src/content/Scope - History2.md']
 ---
 <div class="jumbotron row">
   <img class="col-sm-6 img-responsive img-rounded" src="{{assets}}/img/ictp.jpg" alt="Picture of ICTP Trieste">
@@ -10,15 +11,23 @@ posts: ['src/content/Scope - History.md','src/content/Scope - Formula.md','src/c
 
 # Scope
 
-The ICFA schools started in 1987 at the International Center of Theoretical Physics (ICTP) of Trieste. The aim of the school was to share the expertise in new detector technologies with physicists from less developed countries guests of the ITCP. After that very positive experience, reproduced in 1989 again in Trieste, the school started to be organized abroad, in sites located outside the highly industrialized parts of the world. 
-
+The aim of “Danube School on Instrumentation in Elementary Particle & Nuclear Physics” is to bring together graduate students from Universities from the whole Danube region and also worldwide. The school is an equal opportunity event intended for MSc, PhD students and postdocs who want to acquire hands on experience in different detector technologies used in Particle Physics and in Nuclear Physics, as well. Researchers who are actively involved in the field and recognized experts in detector R&D will give lectures and state-of-art laboratory sessions. A second very important aim of this school is to promote future collaborations between young physicists working in the same or similar areas of research. Students are encouraged to attend, contribute and share their experience.
       {{/markdown}}
   </div>
 </div>
 
-<section id="main">
+<section class="scope" id="main">
   <div class="row">
-    {{#each posts}}
+    {{#each posts1}}
+    <article class="col-sm-4">
+      {{md this }}
+    </article>
+    {{/each}}
+  </div>
+  
+  <div class="row">
+    <img class="col-sm-4 img-responsive img-rounded" src="{{assets}}/img/ictp.jpg" alt="Picture of ICTP Trieste">
+    {{#each posts2}}
     <article class="col-sm-4">
       {{md this }}
     </article>

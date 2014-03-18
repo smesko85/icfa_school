@@ -1,9 +1,22 @@
 ---
 title: Contact
 sort: 9
-posts: ['Contact.md']
+posts: ['src/content/Contact1.md','src/content/Contact2.md','src/content/Contact3.md']
 ---
-<h1>{{title}}</h1>
-{{#each posts}}
-  {{md this}}
-{{/each}}
+<section>
+{{#markdown}}
+#Contact
+
+###Any question regarding the school can be sent to:
+
+{{/markdown}}
+  
+  <div class="row">
+    <div class="col-sm-1"></div>
+    {{#each posts}}
+    <article class="col-sm-3">
+      {{md this }}
+    </article>
+    {{/each}}
+  </div>
+</section>
