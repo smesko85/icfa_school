@@ -78,7 +78,9 @@ margin: 5px 0;
 /* Navbar ****************************************************************************/
 .navbar-header{
     float:none;
+    
 }
+
 
 /* Logo *******************************************************************************/
 .navbar-brand.logo{
@@ -271,6 +273,8 @@ margin: 5px 0;
     left:27px;
     top:3px;
     overflow:hidden;
+    font-family: 'Kreon',serif;
+    font-weight: 400;
 }
 .header-title .navbar-brand{
     font-weight: bold;
@@ -285,7 +289,7 @@ margin: 5px 0;
 
 .navbar-brand .ord {
     font-size: 0.6em;
-    font-variant: small-caps;
+    font-variant: normal;
     vertical-align: super;
 }
 .navbar-brand small {
@@ -293,8 +297,8 @@ margin: 5px 0;
     line-height: 1em;
     margin-top:-1em;
     /*    margin-top:1.5em;*/
-    /*    margin-bottom:1em;*/
-    /*    font-weight: normal;*/
+    margin-bottom:0.2em;
+    font-weight: normal;
     color: rgba(255,255,255,0.8);
     /*    position:relative;*/
     display:block;
@@ -350,7 +354,7 @@ margin: 5px 0;
 
 @media (min-width: 768px) {
     .navbar .header-title .navbar-brand{
-        font-size:1.6em;
+        font-size:2em;
         line-height: 1.1em;
         margin-top:1em;
         margin-left: 0;
@@ -364,11 +368,23 @@ margin: 5px 0;
         position:static;
         max-width:100%;
     }
+    
+    .header-title:after{
+        content: "";
+        background: url('../img/knitted-netting.png');
+        opacity:0.3;
+        top:0;
+        left:0;
+        bottom: 0;
+        right:0;
+        position: absolute;
+        z-index:-1;
+    }
 }
 
 @media (min-width: 992px) { 
     .navbar .header-title .navbar-brand{
-        font-size:2em;
+        font-size:2.4em;
         /*        line-height: 1.0em;*/
         /*        max-width:80%;*/
     }
@@ -383,7 +399,7 @@ margin: 5px 0;
 
 @media (min-width: 1200px) { 
     .navbar .header-title .navbar-brand{
-        font-size:2.5em;
+        font-size:2.8em;
         line-height: 1.0em;
         /*        max-width:80%;*/
         /*        max-width:100%;*/
@@ -552,9 +568,9 @@ margin: 5px 0;
     margin-bottom:0;
 }
 
-@media (min-width: 768px) and (max-width: 1199px){
+@media (min-width: 768px){
     .jumbotron h1{
-        font-size:3.5em;
+        font-size:2.5em;
     }
 
     .jumbotron p{
@@ -592,7 +608,28 @@ margin: 5px 0;
     border-left: 10px solid rgba(0,0,0,0.3);
     padding-left: 5px;
 }
-
+@media (min-width: 768px){
+    #main{
+        position: relative;
+        z-index:2;
+    }
+    
+    #main article{
+        z-index:3;
+    }
+    
+    #main:after{
+        content: "";
+        background: url('../img/fabric_plaid.png');
+        opacity:0.5;
+        top:0;
+        left:0;
+        bottom: 0;
+        right:0;
+        position: absolute;
+        z-index:1;
+    }
+}
 /* Footer *************************************************************************************/
 #footer {
     font-size: 0.8em;
@@ -616,7 +653,7 @@ margin: 5px 0;
 
 /* Home page *********************************************************************************/
 #home-hero {
-    background: url('../img/56.jpg');
+    background: url('../img/dunav.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: none;

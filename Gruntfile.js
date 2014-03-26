@@ -78,16 +78,30 @@ module.exports = function(grunt) {
       }
     },
 
+    'ftp-deploy': {
+        build: {
+            auth: {
+                host: 'cern-danube-school.uns.ac.rs',
+                port: 21,
+                authKey: 'key1'
+	       },
+	       src: '<%= config.dist %>',
+	       dest: '/var/www/cern-danube-school/html',
+	       exclusions: []
+        }
+    },
+
     // Before generating any new files,
     // remove any previously-created files.
     clean: ['<%= config.dist %>/**/*.{html,xml}']
-
+    
   });
 
   grunt.loadNpmTasks('assemble');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-ftp-deploy');
 
   grunt.registerTask('server', [
     'clean',
@@ -104,5 +118,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'build'
   ]);
+
+  grunt.registerTask('deploy', ['build','ftp-deploy']);
 
 };
