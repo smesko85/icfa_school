@@ -55,6 +55,17 @@ body{
 #footer h1,#footer h2, #footer h3{
     color: #223e77;
 }
+
+::selection{
+    background:#ffb7b7;
+}
+    
+legend{
+    color: #223e77;
+    font-weight: bold;
+    width: auto;
+}
+
 /*
 body {
 padding-top: 100px;
@@ -78,7 +89,13 @@ margin: 5px 0;
 /* Navbar ****************************************************************************/
 .navbar-header{
     float:none;
-    
+}
+
+.navbar-collapse{
+     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 
@@ -90,6 +107,7 @@ margin: 5px 0;
     margin-left:1px;
     float:none;
     display:block;
+
 }
 
 .header-logos{
@@ -99,6 +117,10 @@ margin: 5px 0;
     float:none;
     position:absolute;
     left:0;
+      user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .logo {
@@ -476,7 +498,10 @@ margin: 5px 0;
     .navbar-default .navbar-nav > li > a:hover {
         background-color: #ebf0f9; 
     }
-
+    
+    .navbar-default .navbar-nav > li > a:focus {
+        background-color: #ebf0f9; 
+    }
     .navbar-nav > li > a {
         padding: 3px 10px;
     }
@@ -627,7 +652,7 @@ margin: 5px 0;
         bottom: 0;
         right:0;
         position: absolute;
-        z-index:1;
+        z-index:-1;
     }
 }
 /* Footer *************************************************************************************/
@@ -643,6 +668,18 @@ margin: 5px 0;
 #footer h1{
     font-size: 1.5em;
     text-shadow:none;
+}
+
+#footer footer{
+    font-size:1.1em;
+    text-align: center;
+    color: transparent;
+    font-weight: bold;
+    text-shadow: 0 -1px 0 rgba(36,64,121,0.5), 0 1px 0 rgba(255,255,255,0.3), 0 2px 0 rgba(136,164,221,0.9);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
 }
 /* Images
 *********************************************************************************/
@@ -700,11 +737,11 @@ margin: 5px 0;
     padding-left: 2em;
 }
 
-#main ul li{
+#main.topics  ul li{
     list-style:none;
 }
 
-#main ul li:before{
+#main.topics  ul li:before{
     content: "\00bb";
     left:2em;
     position: absolute;
@@ -738,4 +775,72 @@ margin: 5px 0;
     padding: 0.5em;
     overflow: hidden;
     background: rgba(255,255,255,0.6);
+}
+
+/* Registration **************************************************************************************/
+#mc_embed_signup {
+    margin: 0 auto;
+    width:80%;
+}
+
+.mc-address-group{
+    margin: 1em 0;
+    padding: 1em;
+    border:1px solid rgba(0,0,0,0.3);
+}
+
+.mc-address-group:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.mc-field-group{
+    width:100%;
+}
+
+.mc-field-group.input-group ul {
+    border: 1px solid rgba(0,0,0,0.3);
+    background:white;
+}
+
+.mc-field-group.input-group ul li input{
+    margin: 0.5em 0.5em 0.5em 1em;
+}
+
+#mc-embedded-subscribe:hover{
+    background: rgba(255,255,255,0.5);
+}
+
+#mc-embedded-subscribe:focus{
+    background: rgba(255,255,255,0.5);
+}
+
+input#mc-embedded-subscribe.btn{
+    width: 15%;
+}
+
+#mc_embed_signup .mc-field-group label[for="mce-BDATE-month"] > .asterisk {
+    right:auto;
+    left: 8em;
+}
+
+#mc-embedded-subscribe-form textarea{
+    width:100%;
+}
+
+#mc-embedded-subscribe-form .mc-field-group input,
+#mc_embed_signup .mc-field-group.input-group ul,
+#mc-embedded-subscribe-form textarea{
+    border-radius: 5px;
+    border:1px solid #223e77;
+    border-bottom-width:3px;
+}
+
+.mc-address-group {
+    border:1px solid #223e77;
+    border-radius:3px;
 }
