@@ -1,9 +1,16 @@
 ---
 title: Travel & Accomodation
 sort: 6
-posts: ['Travel.md']
+posts1: ['src/content/Travel - Serbia.md','src/content/Travel - Novi Sad.md','src/content/Travel - Visa.md']
 ---
 <h1>{{title}}</h1>
-{{#each posts}}
-  {{md this}}
-{{/each}}
+
+<section class="travel" id="main">
+  <div class="row">
+    {{#each posts1}}
+    <article class="col-md-4 col-sm-6">
+      {{md this }}
+    </article>
+    {{/each}}
+  </div>
+</section>

@@ -777,6 +777,26 @@ margin: 5px 0;
     background: rgba(255,255,255,0.6);
 }
 
+/* Travel and Accommodation****************************************************************************/
+#coming-to-serbia-by-plane ~ h4:hover{
+    background:gray;
+    background: rgba(64,64,64,0.5);
+}
+
+#coming-to-serbia-by-plane ~ h4{
+    height: auto;
+    padding:5px 15px;
+    transition: all 0.4s;
+    border-radius:100px;
+    cursor: pointer;
+    background: lightgray;
+    background: rgba(127,127,127,0.3);
+    border: 1px solid gray;
+    border-bottom-width:2px;
+}
+
+#coming-to-serbia-by-plane ~ h4
+
 /* Registration **************************************************************************************/
 #mc_embed_signup {
     margin: 0 auto;
@@ -820,8 +840,12 @@ margin: 5px 0;
 }
 
 input#mc-embedded-subscribe.btn{
-    width: 15%;
+    font-size: 20px;
+    height: 40px;
+    width: 10em;
+    max-width:80%;
 }
+
 
 #mc_embed_signup .mc-field-group label[for="mce-BDATE-month"] > .asterisk {
     right:auto;
@@ -844,3 +868,4 @@ input#mc-embedded-subscribe.btn{
     border:1px solid #223e77;
     border-radius:3px;
 }
+
