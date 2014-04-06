@@ -4,12 +4,17 @@
 
 body {
     font-size: 18px;
+    -webkit-text-stroke: .15px;
 }
 
 h1, h2, #main h1, #main h2, #main h3{
     color: #647fb4;
+    -webkit-text-stroke: .5px;
     text-shadow: -0.05em -0.05em 1px rgba(0, 0, 0, 0.8);
     font-variant-numeric: ordinal;
+}
+.header-title {
+    -webkit-text-stroke: .5px;
 }
 
 #contact ~ section h4 {
@@ -525,6 +530,7 @@ margin: 5px 0;
         font-size: 1.1em;
 /*        margin:0 2em;*/
 /*                margin-bottom: -0.25em;*/
+        margin-bottom:1px;
     }
 
     .navbar-nav > li > a {
@@ -537,6 +543,7 @@ margin: 5px 0;
         font-size: 1em;
         /*        margin:0 -15px;*/
         /*        margin-bottom: -0.25em;*/
+        margin-bottom:0;
     }
 
     .navbar-default .navbar-nav > li > a {
@@ -707,22 +714,42 @@ margin: 5px 0;
 @media (min-width: 768px) {
     #home-hero {
         padding: 1em;
-        padding-left: 50%;
+        /*padding-left: 50%;*/
         border-radius: 0;
         border: none;
-        min-height: 25em;
+        min-height: 20em;
     }
 
     #home-hero div {
         border-radius: 5px;    
-        background: rgba(255,255,255,0.9);
-        float: none;
+        background: rgba(255,255,255,0.6);
+        /*float: none;*/
+        position: relative;
+        /*min-height: 2em;*/
     }
+
+/*    #home-hero div:before {
+        content:' ';    
+        background: url('../img/ispy-run139779-evt4994190-v1-Copyright-hires.png') center ;
+        background-size: cover;
+        display:block;
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        border-radius: 5px;
+        z-index:-1;
+        opacity:0.5;
+        margin:0.2em;
+        background-clip:content-box;
+    }*/
 }
 
 #home-hero div {
-    background: rgba(255,255,255,0.8);
+    background: rgba(255,255,255,0.6);
     padding: 1em;
+    height:100%;
 }
 
 
