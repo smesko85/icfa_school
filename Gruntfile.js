@@ -24,13 +24,101 @@ module.exports = function(grunt) {
 
     config: {
       src: 'src',
-      dist: 'dist'
+      temp: 'tmp',
+      dist: 'dist',
+      tidy: 'tidy'
+    },
+
+    htmlmin: {
+      dist: {
+        options: {
+          
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= config.dist %>',
+          src: ['*.html'],
+          dest: '<%= config.dist %>'
+        }]
+      }
+    },
+
+    cssmin: {
+      dist: { 
+        options: {
+          keepSpecialComments: 0
+        },
+        files: {
+          '<%= config.dist %>/assets/css/bootstrap.css': ['<%= config.src %>/assets/css/bootstrap*.css'],
+          '<%= config.dist %>/assets/css/theme.css': ['<%= config.src %>/assets/css/theme.css'],
+        }
+      }
+    },
+
+    uncss: {
+      dist: {
+        options: {
+          ignoreSheets: ['assets/css/theme.css']
+        },
+        files: {
+          '<%= config.dist %>/assets/css/bootstrap.css': ['<%= config.dist %>/*.html']
+        }
+      }
+    },
+
+    uglify: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.src %>',
+          src: ['assets/js/*.js'],
+          dest: '<%= config.dist %>'
+        }]
+      }
+    },
+
+    imagemin: {
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= config.src %>/',
+          src: ['assets/img/*.{png,jpg,gif}'],
+          dest: '<%= config.dist %>/'
+        }]
+      }
+    },
+
+    processhtml: {
+      dist: {
+        files: [{ 
+          expand: true,
+          cwd: '<%= config.dist %>/',
+          src: ['*.html'],
+          dest: '<%= config.dist %>/'
+        }]
+      }
+    },
+
+    copy: {
+      dist: {
+        files:[{
+          expand: true,
+          cwd: '<%= config.src %>/assets/fonts/',
+          src: ['**'],
+          dest: '<%= config.dist %>/assets/fonts/'
+        },{src: '<%= config.src %>/site.appcache', dest: '<%= config.dist %>/site.appcache'}
+        ]
+      }
     },
 
     watch: {
       assemble: {
         files: ['<%= config.src %>/{content,data,templates}/{,*/}*.{md,hbs,yml}'],
         tasks: ['assemble']
+      },
+      css: {
+        files: ['<%= config.src %>/assets/css/*.css'],
+        tasks: ['cssmin','uncss']
       },
       livereload: {
         options: {
@@ -70,7 +158,7 @@ module.exports = function(grunt) {
           layout: '<%= config.src %>/templates/layouts/default.hbs',
           data: '<%= config.src %>/data/*.{json,yml}',
           partials: '<%= config.src %>/templates/partials/*.hbs',
-          plugins: ['assemble-contrib-permalinks','assemble-contrib-sitemap'],
+          plugins: ['assemble-contrib-permalinks'],
         },
         files: {
           '<%= config.dist %>/': ['<%= config.src %>/templates/pages/*.hbs']
@@ -102,17 +190,39 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-ftp-deploy');
+  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-newer');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-uncss');
+  grunt.loadNpmTasks('grunt-processhtml');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
-  grunt.registerTask('server', [
+  grunt.registerTask('serve', [
     'clean',
+    'newer:imagemin',
     'assemble',
+    'uglify',
+    'processhtml',
+    'htmlmin',
+    'cssmin',
+    'uncss',
+    'newer:copy',
     'connect:livereload',
     'watch'
   ]);
 
   grunt.registerTask('build', [
     'clean',
-    'assemble'
+    'newer:imagemin',
+    'assemble',
+    'uglify',
+    'processhtml',
+    'htmlmin',
+    'cssmin',
+    'uncss',
+    'newer:copy'
   ]);
 
   grunt.registerTask('default', [

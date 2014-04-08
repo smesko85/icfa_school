@@ -1,10 +1,1 @@
-var jqueryLoaded=jQuery;
-if(jqueryLoaded=true){
-    jQuery(document).ready(function($){
-        var directions = $('#coming-to-serbia-by-plane ~ h4');
-        directions.next().hide();
-        directions.click(function(){$(this).next().slideToggle("");});
-
-    })
-
-}
+var jqueryLoaded=jQuery;(jqueryLoaded=!0)&&jQuery(document).ready(function(a){var b=a("#coming-to-serbia-by-plane ~ h4");b.next().hide(),b.click(function(){a(this).next().slideToggle("")})});

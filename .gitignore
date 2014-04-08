@@ -1,3 +1,6 @@
+dist
+tidy
+tmp
 lib-cov
 *.seed
 *.log
