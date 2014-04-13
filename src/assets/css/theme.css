@@ -1,6 +1,6 @@
 /* Typography *****************************************************************/
 @import url(http://fonts.googleapis.com/css?family=Kreon:300,400,700);
-@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,latin-ext&subset=latin,latin-ext);
 
 body {
     font-size: 18px;
@@ -32,6 +32,20 @@ h1, h2, #main h1, #main h2, #main h3{
 
 .navbar-nav > li > a {
     text-shadow: 0 -0.1em 0.2em rgba(127,127,127,0.5), 0 0.1em 0.2em rgba(255,255,255,0.5);  
+}
+
+/* Body transition *********************************************************************/
+body{
+    transition: all 0.5s;
+}
+
+/* Loader wrapper */
+.wrapper {
+    position:absolute;
+    top:50%;
+    left:50%;
+    z-index:999
+    background:white;
 }
 
 
@@ -160,13 +174,6 @@ margin: 5px 0;
 
 .logo.ftn {
     background-image: url('../img/logo-ftn.jpg');
-}
-
-.logo.ecfa, .logo.icfa{
-    /*
-    width:64px;
-    height:40px;
-    */
 }
 
 .logo.ecfa {
@@ -589,11 +596,13 @@ margin: 5px 0;
     border-bottom: 2px rgba(0,0,0,0.2) solid;
 }
 
-.container .jumbotron {
-    border-radius: 0;
+.container .jumbotron,.container-fluid .jumbotron{
+    /*border-radius: 0;
     padding-left: 0;
     padding-right: 0;
     margin:0;
+    max-height: 25em;
+    overflow:hidden;*/
 }
 
 .jumbotron.row {
@@ -617,6 +626,10 @@ margin: 5px 0;
 }
 
 /* Main content ******************************************************************************/
+.container,.container-fluid {
+    overflow: hidden;
+}
+
 #main {
     padding: 2em 0.1em;   
     margin-left:-15px;
@@ -640,6 +653,8 @@ margin: 5px 0;
     border-left: 10px solid rgba(0,0,0,0.3);
     padding-left: 5px;
 }
+
+
 @media (min-width: 768px){
     #main{
         position: relative;
@@ -661,7 +676,68 @@ margin: 5px 0;
         position: absolute;
         z-index:-1;
     }
+
+  /*  #main > .row {
+        -moz-column-count: 2;
+        -moz-column-gap: 2em;
+        -webkit-column-count: 2;
+        -webkit-column-gap: 2em;
+        column-count: 2;
+        column-gap: 2em;
+        padding:1em;
+    }*/
 }
+
+#carousel {
+    padding:0;
+    border-width:10px;
+}
+
+#carousel > .carousel-inner {
+  position:relative;
+  border:none;
+  padding:0;
+}
+
+#carousel > .carousel-inner > .item {
+    padding-top:56.525%;
+}
+
+#carousel > .carousel-inner > .item > img {
+    position:absolute;
+    top:0;
+    bottom:0
+    left:0;
+    right:0;
+    border-width:0;
+}
+
+#carousel, #carousel > .carousel-inner, .carousel-inner > .item {
+    /*border: none !important;
+    /*padding:0 !important;*/
+}
+
+@media (min-width: 992px){
+    /*#main > .row {
+        -moz-column-count: 3;
+        -moz-column-gap: 2em;
+        -webkit-column-count: 3;
+        -webkit-column-gap: 2em;
+        column-count: 3;
+        column-gap: 2em;
+    }*/
+}
+
+#important-info {
+    margin:0.5em -0.8em -0.8em;
+    font-size: 1.2em;
+    text-align:center;
+    font-weight: bold;
+    text-transform: uppercase;
+    -webkit-animation-delay: 5s;
+    animation-delay: 5s;
+}
+
 /* Footer *************************************************************************************/
 #footer {
     font-size: 0.8em;
@@ -695,13 +771,21 @@ margin: 5px 0;
     height:auto;    
 }
 
+#main img {
+    width: 100%;
+    max-width:100%;
+    margin:0.5em 0 1em;
+    border:5px solid rgba(255,255,255,0.5);
+    box-shadow: 0 0 1px rgba(0,0,0,0.5);
+}
+
 /* Home page *********************************************************************************/
 #home-hero {
-    background: url('../img/dunav.jpg');
+    background-image: url('../img/dunav.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: none;
-    padding:1em;
+    background-repeat: no-repeat;
+    padding: 1em;
     opacity: 0.8;
     border-radius: 5px;
     margin: -20px;
@@ -720,7 +804,7 @@ margin: 5px 0;
         min-height: 20em;
     }
 
-    #home-hero div {
+    #home-hero > div {
         border-radius: 5px;    
         background: rgba(255,255,255,0.6);
         /*float: none;*/
@@ -746,7 +830,7 @@ margin: 5px 0;
     }*/
 }
 
-#home-hero div {
+#home-hero > div {
     background: rgba(255,255,255,0.6);
     padding: 1em;
     height:100%;

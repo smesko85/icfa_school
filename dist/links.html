@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" manifest="site.appcache">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Links | Danube School on Instrumentation in Elementary Particle &amp; Nuclear Physics</title>
@@ -9,18 +9,38 @@
     
     <!-- Custom styles for this template -->
     <link href="assets/css/theme.css" rel="stylesheet">
-    
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/img/unsICO.ico" type="image/x-icon">
+
+    <script src="assets/js/heartcode-canvasloader-min-0.9.1.js"></script>
+        
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+      <![endif]-->
   </head>
   <body>
+    <!-- Create a div which will be the canvasloader wrapper -->    
+    <div id="canvasloader-container" class="wrapper"></div>
+        
+    <!-- This script creates a new CanvasLoader instance and places it in the wrapper div -->
+    <script type="text/javascript">
+        var cl = new CanvasLoader('canvasloader-container');
+        cl.setColor('#043834'); // default is '#000000'
+        cl.setShape('spiral'); // default is 'oval'
+        cl.show(); // Hidden by default
+        
+        // This bit is only for positioning - not necessary
+          var loaderObj = document.getElementById("canvasLoader");
+        loaderObj.style.position = "absolute";
+        loaderObj.style["top"] = cl.getDiameter() * -0.5 + "px";
+        loaderObj.style["left"] = cl.getDiameter() * -0.5 + "px";
+
+        document.body.style.opacity = 0;
+    </script>
 
     
 <!-- Fixed navbar -->
@@ -109,8 +129,10 @@
 
 
     <div class="container-fluid theme-showcase" role="main">
-
-      
+        <aside id="important-info" class="alert alert-danger animated shake">
+            Deadline for applications: June 15 2014.
+        </aside>
+        
 <h1>Links</h1>
 
   
@@ -156,6 +178,13 @@
     <script src="assets/js/jquery-1.11.0.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.js"></script>
     <script src="assets/js/loader.js"></script>
-  </body>
+    <script type="text/javascript">
+        $(window).load(function(){
+            cl.hide();
+            $("body").css("opacity",1);
+        })
+    </script>
+</body>
 </html>

@@ -2,16 +2,16 @@
 title: Scope
 sort: 2
 posts1: ['src/content/Scope - Goals.md','src/content/Scope - Formula.md','src/content/Scope - Attendance.md']
-posts2: ['src/content/Scope - History.md','src/content/Scope - History2.md']
+posts2: ['src/content/Scope - picture.md','src/content/Scope - History.md','src/content/Scope - History2.md']
 ---
 <div class="jumbotron row">
-  <img class="col-sm-6 img-responsive img-rounded" src="{{assets}}/img/ictp.jpg" alt="Picture of ICTP Trieste">
+  <img class="col-sm-6 img-responsive img-rounded" src="{{assets}}/img/ns/05-NS.jpg" alt="Picture of Petrovaradin, Novi Sad">
   <div class="col-sm-6">
       {{#markdown}}
 
 # Scope
 
-The aim of “Danube School on Instrumentation in Elementary Particle & Nuclear Physics” is to bring together graduate students from Universities from the whole Danube region and also worldwide. The school is an equal opportunity event intended for MSc, PhD students and postdocs who want to acquire hands on experience in different detector technologies used in Particle Physics and in Nuclear Physics, as well. Researchers who are actively involved in the field and recognized experts in detector R&D will give lectures and state-of-art laboratory sessions. A second very important aim of this school is to promote future collaborations between young physicists working in the same or similar areas of research. Students are encouraged to attend, contribute and share their experience.
+The aim of “Danube School on Instrumentation in Elementary Particle & Nuclear Physics” is to bring together graduate students from Universities, from the whole Danube region and the International community. The school is an equal opportunity event intended for MSc, PhD students and postdocs who want to acquire hands on experience in different detector technologies used in Particle Physics and Nuclear Physics, as well. Researchers who are actively involved in the field and are recognized experts in detector R&D, will give lectures and state-of-art laboratory sessions. A second very important aim of this school is to promote future collaborations between young physicists working in the same or similar areas of research. Students are encouraged to attend, contribute and share their experience.
       {{/markdown}}
   </div>
 </div>
@@ -19,16 +19,13 @@ The aim of “Danube School on Instrumentation in Elementary Particle & Nuclear 
 <section class="scope" id="main">
   <div class="row">
     {{#each posts1}}
-    <article class="col-sm-4">
+    <article class="col-md-4 col-sm-6">
       {{md this }}
     </article>
     {{/each}}
-  </div>
-  
-  <div class="row">
-    <img class="col-sm-4 img-responsive img-rounded" src="{{assets}}/img/ictp.jpg" alt="Picture of ICTP Trieste">
+    <div class="clearfix hidden-xs"></div>
     {{#each posts2}}
-    <article class="col-sm-4">
+    <article class="col-md-4 col-sm-6">
       {{md this }}
     </article>
     {{/each}}

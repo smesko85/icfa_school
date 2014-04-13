@@ -1,3 +1,2 @@
 ## School history
 The ICFA schools started in 1987 at the International Center of Theoretical Physics (ICTP) of Trieste. The aim of the school was to share the expertise in new detector technologies with physicists from less developed countries guests of the ITCP. After that very positive experience, reproduced in 1989 again in Trieste, the school started to be organized abroad, in sites located outside the highly industrialized parts of the world. 
-

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" manifest="site.appcache">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Venue | Danube School on Instrumentation in Elementary Particle &amp; Nuclear Physics</title>
@@ -9,18 +9,38 @@
     
     <!-- Custom styles for this template -->
     <link href="assets/css/theme.css" rel="stylesheet">
-    
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/img/unsICO.ico" type="image/x-icon">
+
+    <script src="assets/js/heartcode-canvasloader-min-0.9.1.js"></script>
+        
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+      <![endif]-->
   </head>
   <body>
+    <!-- Create a div which will be the canvasloader wrapper -->    
+    <div id="canvasloader-container" class="wrapper"></div>
+        
+    <!-- This script creates a new CanvasLoader instance and places it in the wrapper div -->
+    <script type="text/javascript">
+        var cl = new CanvasLoader('canvasloader-container');
+        cl.setColor('#043834'); // default is '#000000'
+        cl.setShape('spiral'); // default is 'oval'
+        cl.show(); // Hidden by default
+        
+        // This bit is only for positioning - not necessary
+          var loaderObj = document.getElementById("canvasLoader");
+        loaderObj.style.position = "absolute";
+        loaderObj.style["top"] = cl.getDiameter() * -0.5 + "px";
+        loaderObj.style["left"] = cl.getDiameter() * -0.5 + "px";
+
+        document.body.style.opacity = 0;
+    </script>
 
     
 <!-- Fixed navbar -->
@@ -109,8 +129,10 @@
 
 
     <div class="container-fluid theme-showcase" role="main">
-
-      
+        <aside id="important-info" class="alert alert-danger animated shake">
+            Deadline for applications: June 15 2014.
+        </aside>
+        
 <div class="jumbotron row">
   <img class="col-sm-6 img-responsive img-rounded" src="assets/img/unskampus.jpg" alt="University of Novi Sad Campus">
   <div class="col-sm-6">
@@ -123,31 +145,30 @@
 <section id="main">
   <div class="row">
     
-    <article class="col-sm-6">
+    <article class="col-md-4 col-sm-6">
       <h2 id="university-of-novi-sad-br-small-host-of-the-event-small-">University of Novi Sad <br><small>Host of the event</small></h2>
+<p><img src="assets/img/ns/01-NS.jpg" alt="Picture of University of Novi Sad"></p>
 <p>The University of Novi Sad is a contemporary educational, scientific and art institution, with around 50 thousands students at three levels of studies and 3,500 teaching staff at 350 study programmes. For many years the University has been intensively developing international cooperation with universities and other institutions in the area of higher education, scientific and research activities from Europe and the world. It has presided over the Danube Rectors’ Conference in 2010 and is a member of many other international organizations, such as the European University Association, European University Foundation, Balkan Universities Network, the Alpe Adria Initiative Universities’ Network etc. </p>
+<p><img src="assets/img/ns/04-NS.jpg" alt="Picture of University of Novi Sad"></p>
 <p>The University of Novi Sad is actively involved in the implementation of the Priority 7 of the EU Strategy for the Danube Region (EUSDR), i.e. the Danube Strategy. This EUSDR Priority Area is dedicated to the development of the knowledge society through research, education and information technologies. The Rector of the University Professor Miroslav Vesković and the President of the Slovak Academy of Sciences jointly coordinate the implementation of this Priority.
 It is a comprehensive University, which was founded on 28 June 1960. Today it comprises 14 faculties located in the four major towns of the Autonomous Province of Vojvodina: Novi Sad, Subotica, Zrenjanin, and Sombor. </p>
-<p>The University of Novi Sad is the second largest among eight state universities in Serbia. The main University Campus, covering an area of 259,807m², provides the University of Novi Sad with a unique and beautiful setting in the region and the city of Novi Sad. In addition to the administrative building, the university campus comprises the faculties, the Student centre with two Student Dormitories and the Central Student Cafeteria, an Apartment Hotel for temporary accommodation of young teaching fellows and research assistants, the Student health centre and the Centre for Physical Education. 
-Having invested considerable efforts in intensifying international cooperation and participating in the process of university reforms in Europe, the University of Novi Sad has come to be recognized as a reform-oriented university in the region and on the map of universities in Europe.</p>
-<hr>
-<p>More info available at <a href="www.uns.ac.rs/en">Official website</a></p>
 
     </article>
     
-    <article class="col-sm-6">
+    <article class="col-md-4 col-sm-6">
+      <p>The University of Novi Sad is the second largest among eight state universities in Serbia. The main University Campus, covering an area of 259,807m², provides the University of Novi Sad with a unique and beautiful setting in the region and the city of Novi Sad. In addition to the administrative building, the university campus comprises the faculties, the Student centre with two Student Dormitories and the Central Student Cafeteria, an Apartment Hotel for temporary accommodation of young teaching fellows and research assistants, the Student health centre and the Centre for Physical Education. 
+Having invested considerable efforts in intensifying international cooperation and participating in the process of university reforms in Europe, the University of Novi Sad has come to be recognized as a reform-oriented university in the region and on the map of universities in Europe.</p>
+<p><img src="assets/img/ns/06-NS.jpg" alt="Picture of University of Novi Sad"></p>
+<hr>
+<p>More info about Univeristy of Novi Sad available at <a href="www.uns.ac.rs/en">Official website</a></p>
+
+    </article>
+    
+    <article class="col-md-4 col-sm-6">
       <h2 id="novi-sad">Novi Sad</h2>
 <p>The City of Novi Sad is the administrative, economic, cultural, scientific and touristic centre of the Autonomous Province of Vojvodina, stretched along the fruitful Pannonian Basin. It is the second largest city in Serbia, with between 300 and 400 thousand citizens.
 Novi Sad lies on the Danube River waterway and it is located on the 1,225th kilometer of the Danube flow. The river Danube gives specific and recognizable character to the City. The city Quay alongside the Danube brushes the edges of the University of Novi Sad campus and is loved by the people of Novi Sad for the walks and recreational activities.</p>
-<p>With its 300-year history, Novi Sad is the multinational, multicultural and multi-confessional European city. It has come to be recognized by the Exit Festival, famous especially among the young Europeans. It is also famous for the oldest cultural institution of Serbia – Matica srpska, and the Serbian National Theater, among others. The galleries and museums in the City offer interesting and colorful view at Novi Sad from a different angle.
-Finally, one of the most recognizable elements of Novi Sad is certainly the Petrovaradin Fortress, a historical site located on the right bank of the Danube.
-In a vicinity of Novi Sad lies the mountain of Fruška gora, one of the Serbian national parks, which is the home of over a dozen Serbian Orthodox monasteries dating back to the period between the 12th and the 15th century. They have the status of the monuments of culture of exceptional importance of the Republic of Serbia and many of them are the usual visiting points on the tourist routes. </p>
-<hr>
-<p>For more info visit:</p>
-<ul>
-<li><a href="http://www.novisad.rs/eng">Official site of the City of Novi Sad</a></li>
-<li><a href="http://www.turizamns.rs/en">Tourist Organization of Novi Sad website</a></li>
-</ul>
+<p><img src="assets/img/ns/02-NS.jpg" alt="Picture of Novi Sad"></p>
 
     </article>
     
@@ -193,6 +214,13 @@ In a vicinity of Novi Sad lies the mountain of Fruška gora, one of the Serbian 
     <script src="assets/js/jquery-1.11.0.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.js"></script>
     <script src="assets/js/loader.js"></script>
-  </body>
+    <script type="text/javascript">
+        $(window).load(function(){
+            cl.hide();
+            $("body").css("opacity",1);
+        })
+    </script>
+</body>
 </html>

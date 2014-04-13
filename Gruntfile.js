@@ -32,7 +32,8 @@ module.exports = function(grunt) {
     htmlmin: {
       dist: {
         options: {
-          
+          collapseWhitespace: false,
+          removeComments: false
         },
         files: [{
           expand: true,
@@ -49,7 +50,7 @@ module.exports = function(grunt) {
           keepSpecialComments: 0
         },
         files: {
-          '<%= config.dist %>/assets/css/bootstrap.css': ['<%= config.src %>/assets/css/bootstrap*.css'],
+          '<%= config.dist %>/assets/css/bootstrap.css': ['<%= config.src %>/assets/css/{bootstrap*,animate}.css'],
           '<%= config.dist %>/assets/css/theme.css': ['<%= config.src %>/assets/css/theme.css'],
         }
       }
@@ -58,10 +59,13 @@ module.exports = function(grunt) {
     uncss: {
       dist: {
         options: {
+          ignore: ['.navbar-brand','.logo','.header-logos','.navbar-toggle','.collapsed','.collapse',
+                    '.navbar-collapse.collapse','.in','.collapsing','.collapse.in','.navbar-collapse.in',
+                    '.navbar-toggle:focus','.hidden-xs','.carousel-inner','.carousel-inner > .item'],
           ignoreSheets: ['assets/css/theme.css']
         },
         files: {
-          '<%= config.dist %>/assets/css/bootstrap.css': ['<%= config.dist %>/*.html']
+          '<%= config.dist %>/assets/css/bootstrap.css': ['<%= config.dist %>/{contact,index,links,organization,registration,scope,topics,travel,venue}.html']
         }
       }
     },
@@ -82,7 +86,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: '<%= config.src %>/',
-          src: ['assets/img/*.{png,jpg,gif}'],
+          src: ['assets/img/{,*/}*.{png,jpg,gif}'],
           dest: '<%= config.dist %>/'
         }]
       }
@@ -114,11 +118,23 @@ module.exports = function(grunt) {
     watch: {
       assemble: {
         files: ['<%= config.src %>/{content,data,templates}/{,*/}*.{md,hbs,yml}'],
-        tasks: ['assemble']
+        tasks: ['assemble','processhtml','htmlmin']
+      },
+      imagemin: {
+        files: ['<%= config.src %>/assets/img/{,*/}*.{png,jpg,gif}'],
+        tasks: ['newer:imagemin']
+      },
+      copy: {
+        files: ['<%= config.src %>/site.appcache','<%= config.src %>/assets/fonts/*'],
+        tasks: ['copy']
       },
       css: {
         files: ['<%= config.src %>/assets/css/*.css'],
-        tasks: ['cssmin','uncss']
+        tasks: ['cssmin']
+      },
+      uglify:{
+        files: ['<%= config.src %>/assets/js/*.js'],
+        tasks: ['uglify']
       },
       livereload: {
         options: {
@@ -128,7 +144,8 @@ module.exports = function(grunt) {
           '<%= config.dist %>/{,*/}*.html',
           '<%= config.dist %>/assets/{,*/}*.css',
           '<%= config.dist %>/assets/{,*/}*.js',
-          '<%= config.dist %>/assets/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+          '<%= config.dist %>/assets/{,*/}*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= config.dist %>/site.appcache'
         ]
       }
     },
@@ -205,10 +222,9 @@ module.exports = function(grunt) {
     'assemble',
     'uglify',
     'processhtml',
-    'htmlmin',
     'cssmin',
-    'uncss',
-    'newer:copy',
+    'htmlmin',
+    'copy',
     'connect:livereload',
     'watch'
   ]);
@@ -219,10 +235,9 @@ module.exports = function(grunt) {
     'assemble',
     'uglify',
     'processhtml',
-    'htmlmin',
     'cssmin',
-    'uncss',
-    'newer:copy'
+    'htmlmin',
+    'copy'
   ]);
 
   grunt.registerTask('default', [

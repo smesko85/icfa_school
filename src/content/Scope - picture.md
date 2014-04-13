@@ -1,0 +1,1 @@
+![Picture of ICTP Trieste](assets/img/ictp.jpg)

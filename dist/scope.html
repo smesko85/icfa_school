@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" manifest="site.appcache">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Scope | Danube School on Instrumentation in Elementary Particle &amp; Nuclear Physics</title>
@@ -9,18 +9,38 @@
     
     <!-- Custom styles for this template -->
     <link href="assets/css/theme.css" rel="stylesheet">
-    
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="assets/img/unsICO.ico" type="image/x-icon">
+
+    <script src="assets/js/heartcode-canvasloader-min-0.9.1.js"></script>
+        
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+      <![endif]-->
   </head>
   <body>
+    <!-- Create a div which will be the canvasloader wrapper -->    
+    <div id="canvasloader-container" class="wrapper"></div>
+        
+    <!-- This script creates a new CanvasLoader instance and places it in the wrapper div -->
+    <script type="text/javascript">
+        var cl = new CanvasLoader('canvasloader-container');
+        cl.setColor('#043834'); // default is '#000000'
+        cl.setShape('spiral'); // default is 'oval'
+        cl.show(); // Hidden by default
+        
+        // This bit is only for positioning - not necessary
+          var loaderObj = document.getElementById("canvasLoader");
+        loaderObj.style.position = "absolute";
+        loaderObj.style["top"] = cl.getDiameter() * -0.5 + "px";
+        loaderObj.style["left"] = cl.getDiameter() * -0.5 + "px";
+
+        document.body.style.opacity = 0;
+    </script>
 
     
 <!-- Fixed navbar -->
@@ -109,13 +129,15 @@
 
 
     <div class="container-fluid theme-showcase" role="main">
-
-      
+        <aside id="important-info" class="alert alert-danger animated shake">
+            Deadline for applications: June 15 2014.
+        </aside>
+        
 <div class="jumbotron row">
-  <img class="col-sm-6 img-responsive img-rounded" src="assets/img/ictp.jpg" alt="Picture of ICTP Trieste">
+  <img class="col-sm-6 img-responsive img-rounded" src="assets/img/ns/05-NS.jpg" alt="Picture of Petrovaradin, Novi Sad">
   <div class="col-sm-6">
       <h1 id="scope">Scope</h1>
-<p>The aim of “Danube School on Instrumentation in Elementary Particle &amp; Nuclear Physics” is to bring together graduate students from Universities from the whole Danube region and also worldwide. The school is an equal opportunity event intended for MSc, PhD students and postdocs who want to acquire hands on experience in different detector technologies used in Particle Physics and in Nuclear Physics, as well. Researchers who are actively involved in the field and recognized experts in detector R&amp;D will give lectures and state-of-art laboratory sessions. A second very important aim of this school is to promote future collaborations between young physicists working in the same or similar areas of research. Students are encouraged to attend, contribute and share their experience.</p>
+<p>The aim of “Danube School on Instrumentation in Elementary Particle &amp; Nuclear Physics” is to bring together graduate students from Universities, from the whole Danube region and the International community. The school is an equal opportunity event intended for MSc, PhD students and postdocs who want to acquire hands on experience in different detector technologies used in Particle Physics and Nuclear Physics, as well. Researchers who are actively involved in the field and are recognized experts in detector R&amp;D, will give lectures and state-of-art laboratory sessions. A second very important aim of this school is to promote future collaborations between young physicists working in the same or similar areas of research. Students are encouraged to attend, contribute and share their experience.</p>
 
   </div>
 </div>
@@ -123,7 +145,7 @@
 <section class="scope" id="main">
   <div class="row">
     
-    <article class="col-sm-4">
+    <article class="col-md-4 col-sm-6">
       <h2 id="school-goals">School goals</h2>
 <ul>
 <li>To train young scientists in the area of radiation detectors and their applications.</li>
@@ -134,31 +156,33 @@
 
     </article>
     
-    <article class="col-sm-4">
+    <article class="col-md-4 col-sm-6">
       <h2 id="school-formula">School formula</h2>
-<p><em>“Danube School on Instrumentation in Elementary Particle &amp; Nuclear Physics”</em>, jointly organized by CERN (European Organization for Nuclear Research) and University of Novi Sad, Serbia will continue some kind of tradition in organizing schools with lectures and “hands-on” exercises on instrumentation in particle and nuclear physics. This one week school will bring together lecture courses and practical exercises, both held by eminent researchers and professors actively involved in the field of particle and nuclear physics. All laboratory experiments are designed to demonstrate the material presented within lecture session.</p>
+<p><em>“Danube School on Instrumentation in Elementary Particle &amp; Nuclear Physics”</em>, jointly organized by CERN, ECFA, ICFA and the University of Novi Sad, will continue the tradition of offering schools with lectures and “hands-on” exercises on instrumentation in particle and nuclear physics. This one week school will bring together lecture courses and practical exercises, both held by eminent researchers and professors actively involved in the field of particle and nuclear physics. All laboratory experiments are designed to demonstrate the material presented within lecture session.</p>
 
     </article>
     
-    <article class="col-sm-4">
+    <article class="col-md-4 col-sm-6">
       <h2 id="school-attendance">School attendance</h2>
-<p>This is a truly international school open to a maximum of 60 students from all over the world. The priority is given to students from Universities in Danube region, and also for students from developing countries. Since a second very important aim is to promote future collaborations between young physicists working in the same or similar areas of research, students from the technically advanced regions worldwide are also welcome. </p>
+<p>This is a truly international school open to a maximum of 60 students from all over the world. The priority is given to students from Universities in Danube region, and students from emerging countries. Since a second very important aim is to promote future collaborations between young physicists working in the same or similar areas of research, students from the technically advanced regions worldwide are also welcome. </p>
 <p>Possible grants may be provided for the best students from emerging countries.</p>
 
     </article>
     
-  </div>
-  
-  <div class="row">
-    <img class="col-sm-4 img-responsive img-rounded" src="assets/img/ictp.jpg" alt="Picture of ICTP Trieste">
+    <div class="clearfix hidden-xs"></div>
     
-    <article class="col-sm-4">
+    <article class="col-md-4 col-sm-6">
+      <p><img src="assets/img/ictp.jpg" alt="Picture of ICTP Trieste"></p>
+
+    </article>
+    
+    <article class="col-md-4 col-sm-6">
       <h2 id="school-history">School history</h2>
 <p>The ICFA schools started in 1987 at the International Center of Theoretical Physics (ICTP) of Trieste. The aim of the school was to share the expertise in new detector technologies with physicists from less developed countries guests of the ITCP. After that very positive experience, reproduced in 1989 again in Trieste, the school started to be organized abroad, in sites located outside the highly industrialized parts of the world. </p>
 
     </article>
     
-    <article class="col-sm-4">
+    <article class="col-md-4 col-sm-6">
       <h3 id="so-far-the-schools-were-held-as-follows">So far the schools were held as follows</h3>
 <ol>
 <li>1987 ICTP, Trieste</li>
@@ -220,6 +244,13 @@
     <script src="assets/js/jquery-1.11.0.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/modernizr.js"></script>
     <script src="assets/js/loader.js"></script>
-  </body>
+    <script type="text/javascript">
+        $(window).load(function(){
+            cl.hide();
+            $("body").css("opacity",1);
+        })
+    </script>
+</body>
 </html>
