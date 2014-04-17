@@ -7,6 +7,8 @@
 * Livio Mapelli, _CERN_
 * Eugenio Nappi, _INFN, Italy_
 * Manfred Krammer, _HEPHY, Vienna, Austria_
+* Plamen Laydjiev, _INRNE, Bulgarian Academy of Sciences_
+* Calin Alexa, _IFIN-HH, Bucharest, Romania_
 * Peter Križan, _University of Ljubljana and Jožef Stefan Institute, Slovenia_
 * Mirko Planinić, _Faculty of Sciences, Zagreb, Croatia_
 * Vuko Brigljević, _Ruđer Bosković Institute, Zagreb, Croatia_

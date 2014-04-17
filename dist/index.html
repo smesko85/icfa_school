@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" manifest="site.appcache">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -21,6 +21,8 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
+
+
   </head>
   <body>
     <!-- Create a div which will be the canvasloader wrapper -->    
@@ -34,12 +36,19 @@
         cl.show(); // Hidden by default
         
         // This bit is only for positioning - not necessary
-          var loaderObj = document.getElementById("canvasLoader");
+        var loaderObj = document.getElementById("canvasLoader");
         loaderObj.style.position = "absolute";
-        loaderObj.style["top"] = cl.getDiameter() * -0.5 + "px";
-        loaderObj.style["left"] = cl.getDiameter() * -0.5 + "px";
+        loaderObj.style["top"] = "0";
+        loaderObj.style["bottom"] = "0";
+        loaderObj.style["left"] = "0";
+        loaderObj.style["right"] = "0";
+        loaderObj.style["margin"] = "auto";
+        loaderObj.style["width"] = cl.getDiameter() + "px";
+        loaderObj.style["height"] = cl.getDiameter() + "px";
 
-        document.body.style.opacity = 0;
+        document.getElementsByTagName('body')[0].className+=' loader';
+        document.getElementsByTagName('html')[0].className+=' loader';
+        document.getElementById('canvasloader-container').className+=' loader';
     </script>
 
     
@@ -127,7 +136,7 @@
     </div>
 </div>
 
-
+    
     <div class="container-fluid theme-showcase" role="main">
         <aside id="important-info" class="alert alert-danger animated shake">
             Deadline for applications: June 15 2014.
@@ -179,8 +188,8 @@
     <div class="row">
         <article class="col-md-4 col-sm-6">
             <h2>Scope</h2>
-            <img class="img-responsive img-rounded" src="assets/img/ictp.jpg" alt="Picture of ICTP Trieste">
-            <p>The ICFA schools started in 1987 at the International Center of Theoretical Physics (ICTP) of Trieste. The aim of the school was to share the expertise in new detector technologies with physicists from less developed countries guests of the ITCP. After that very positive experience, reproduced in 1989 again in Trieste, the school started to be organized abroad, in sites located outside the highly industrialized parts of the world.
+            <img class="img-responsive img-rounded" src="assets/img/ns/05-NS.jpg" alt="Picture of Petrovaradin, Novi Sad">
+            <p>The aim of “Danube School on Instrumentation in Elementary Particle & Nuclear Physics” is to bring together graduate students from Universities, from the whole Danube region and the International community. The school is an equal opportunity event intended for MSc, PhD students and postdocs who want to acquire hands on experience in different detector technologies used in Particle Physics and Nuclear Physics, as well. Researchers who are actively involved in the field and are recognized experts in detector R&D, will give lectures and state-of-art laboratory sessions. A second very important aim of this school is to promote future collaborations between young physicists working in the same or similar areas of research. Students are encouraged to attend, contribute and share their experience.
             </p>
         </article>
         <article class="col-md-4 col-sm-6">
@@ -189,24 +198,24 @@
             <p></p>The University of Novi Sad is a contemporary educational, scientific and art institution, with around 50 thousands students at three levels of studies and 3,500 teaching staff at 350 study programmes. For many years the University has been intensively developing international cooperation with universities and other institutions in the area of higher education, scientific and research activities from Europe and the world. It has presided over the Danube Rectors’ Conference in 2010 and is a member of many other international organizations, such as the European University Association, European University Foundation, Balkan Universities Network, the Alpe Adria Initiative Universities’ Network etc...
             
         </article>
-        <article class="col-md-4 col-sm-6">
+        <!-- <article class="col-md-4 col-sm-6 ">
             <h2>Topics</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, molestiae, ducimus, quidem, odit rem dolore cum sapiente dolor facilis reiciendis necessitatibus fugiat libero iure maiores dignissimos voluptates nobis commodi numquam!
                 lorem</p>
         </article>
-        <article class="col-md-4 col-sm-6">
+        <article class="col-md-4 col-sm-6 ">
             <h2>Registration</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, molestiae, ducimus, quidem, odit rem dolore cum sapiente dolor facilis reiciendis necessitatibus fugiat libero iure maiores dignissimos voluptates nobis commodi numquam!
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam, magnam deleniti architecto excepturi nemo nostrum quidem aliquid doloribus iste dolorem atque amet non velit blanditiis ex laudantium eligendi. Neque, soluta?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, aspernatur, expedita, velit, incidunt reprehenderit corporis laudantium harum aut enim fugiat reiciendis unde quis fuga debitis animi magnam nihil deserunt beatae.</p>
         </article>
-        <article class="col-md-4 col-sm-6">
+        <article class="col-md-4 col-sm-6 ">
             <h2>Travel &amp; Accomodation</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, molestiae, ducimus, quidem, odit rem dolore cum sapiente dolor facilis reiciendis necessitatibus fugiat libero iure maiores dignissimos voluptates nobis commodi numquam!</p>
         </article>
-        <article class="col-md-4 col-sm-6">
+        <article class="col-md-4 col-sm-6 ">
             <h2>Contact</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, molestiae, ducimus, quidem, odit rem dolore cum sapiente dolor facilis reiciendis necessitatibus fugiat libero iure maiores dignissimos voluptates nobis commodi numquam! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, aut, quasi, eligendi incidunt ullam ducimus iure velit est pariatur dicta placeat nostrum quos quibusdam aliquam quia asperiores omnis earum sapiente?</p>
-        </article>
+        </article> -->
     </div>
 </section>
 
@@ -254,8 +263,10 @@
     <script src="assets/js/loader.js"></script>
     <script type="text/javascript">
         $(window).load(function(){
+            $("#canvasloader-container").removeClass("loader");
+            $("html").removeClass("loader");
+            $("body").removeClass("loader");
             cl.hide();
-            $("body").css("opacity",1);
         })
     </script>
 </body>

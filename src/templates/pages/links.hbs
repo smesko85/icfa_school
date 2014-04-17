@@ -1,9 +1,16 @@
 ---
 title: Links
 sort: 8
-posts: ['Links.md']
+posts: ['src/content/Links.md']
 ---
-<h1>{{title}}</h1>
-{{#each posts}}
-  {{md this}}
-{{/each}}
+
+<section class="links" id="main">
+
+  <div class="row">
+    {{#each posts}}
+    <article class="col-sm-8 col-sm-offset-2">
+      {{md this }}
+    </article>
+    {{/each}}
+  </div>
+</section>

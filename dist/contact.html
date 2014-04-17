@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" manifest="site.appcache">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -21,6 +21,8 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
+
+
   </head>
   <body>
     <!-- Create a div which will be the canvasloader wrapper -->    
@@ -34,12 +36,19 @@
         cl.show(); // Hidden by default
         
         // This bit is only for positioning - not necessary
-          var loaderObj = document.getElementById("canvasLoader");
+        var loaderObj = document.getElementById("canvasLoader");
         loaderObj.style.position = "absolute";
-        loaderObj.style["top"] = cl.getDiameter() * -0.5 + "px";
-        loaderObj.style["left"] = cl.getDiameter() * -0.5 + "px";
+        loaderObj.style["top"] = "0";
+        loaderObj.style["bottom"] = "0";
+        loaderObj.style["left"] = "0";
+        loaderObj.style["right"] = "0";
+        loaderObj.style["margin"] = "auto";
+        loaderObj.style["width"] = cl.getDiameter() + "px";
+        loaderObj.style["height"] = cl.getDiameter() + "px";
 
-        document.body.style.opacity = 0;
+        document.getElementsByTagName('body')[0].className+=' loader';
+        document.getElementsByTagName('html')[0].className+=' loader';
+        document.getElementById('canvasloader-container').className+=' loader';
     </script>
 
     
@@ -127,7 +136,7 @@
     </div>
 </div>
 
-
+    
     <div class="container-fluid theme-showcase" role="main">
         <aside id="important-info" class="alert alert-danger animated shake">
             Deadline for applications: June 15 2014.
@@ -217,8 +226,10 @@ University of Novi Sad<br>
     <script src="assets/js/loader.js"></script>
     <script type="text/javascript">
         $(window).load(function(){
+            $("#canvasloader-container").removeClass("loader");
+            $("html").removeClass("loader");
+            $("body").removeClass("loader");
             cl.hide();
-            $("body").css("opacity",1);
         })
     </script>
 </body>

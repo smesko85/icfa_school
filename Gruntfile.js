@@ -115,6 +115,15 @@ module.exports = function(grunt) {
       }
     },
 
+    autoprefixer: {
+      options: {
+        browsers: ['> 1%','last 25 versions']
+      },
+      dist: {
+        src: ['<%= config.dist %>/assets/css/bootstrap.css','<%= config.dist %>/assets/css/theme.css']
+      }
+    },
+
     watch: {
       assemble: {
         files: ['<%= config.src %>/{content,data,templates}/{,*/}*.{md,hbs,yml}'],
@@ -215,6 +224,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-uncss');
   grunt.loadNpmTasks('grunt-processhtml');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-autoprefixer');
 
   grunt.registerTask('serve', [
     'clean',
@@ -236,6 +246,7 @@ module.exports = function(grunt) {
     'uglify',
     'processhtml',
     'cssmin',
+    'autoprefixer',
     'htmlmin',
     'copy'
   ]);

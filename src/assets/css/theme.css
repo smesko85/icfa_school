@@ -35,23 +35,38 @@ h1, h2, #main h1, #main h2, #main h3{
 }
 
 /* Body transition *********************************************************************/
-body{
+.wrapper{
     transition: all 0.5s;
 }
 
+body.loader, html.loader {
+    margin:0;
+    padding:0;
+    overflow:hidden;
+    background-color:#bfffed;
+}
+
 /* Loader wrapper */
-.wrapper {
+.wrapper.loader{
+    opacity:1;
     position:absolute;
-    top:50%;
-    left:50%;
-    z-index:999
-    background:white;
+    top:0%;
+    left:0%;
+    z-index:1024;
+    background:#d7e1f4;
+    height:100%;
+    width:100%;
+}
+
+
+.wrapper {
+    opacity:0;
 }
 
 
 /* Colors *********************************************************************/
 body{
-    background: #ebf0f9;    
+    /*background: #ebf0f9;    */
 }
 
 .jumbotron{
@@ -780,7 +795,7 @@ margin: 5px 0;
 }
 
 /* Home page *********************************************************************************/
-#home-hero {
+.jumbotron #home-hero {
     background-image: url('../img/dunav.jpg');
     background-size: cover;
     background-position: center;
@@ -980,3 +995,26 @@ input#mc-embedded-subscribe.btn{
     border-radius:3px;
 }
 
+/* Links ********************************************************************************************/
+#useful-links + ul > li {
+    list-style: none;
+}
+
+#useful-links + ul > li:before{
+    content: "\00bb";
+    left:2em;
+    position: absolute;
+}
+
+#useful-links + ul > li > a > em {
+    float:right;
+    text-decoration: underline;
+}
+
+#useful-links + ul > li > a {
+  
+}
+
+#useful-links + ul > li > a:hover {
+    /*background: rgba(255,255,255,0.5);*/
+}
