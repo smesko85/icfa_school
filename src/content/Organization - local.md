@@ -2,7 +2,7 @@
 
 * Miroslav Vesković, _University of Novi Sad (School Director)_
 * Petar Adžić, _University of Belgrade_
-* Đođe Šijački, _University of Belgrade_
+* Đorđe Šijački, _University of Belgrade_
 * Dragan Popović, _University of Belgrade_
 * Aleksandar Belić, _University of Belgrade_
 * Ištvan Bikit, _University of Novi Sad_

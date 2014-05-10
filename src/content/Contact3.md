@@ -1,6 +1,6 @@
-#### Jovana Nikolov, PhD<br>
-_Assistant Professor,_<br>
+#### Kristina Bikit, МSc<br>
+_Research Assistant,_<br>
 Faculty of Sciences,<br>
 University of Novi Sad<br>
-[jovana.nikolov@df.uns.ac.rs](mailto://jovana.nikolov@df.uns.ac.rs)<br>
+[kristina.bikit@df.uns.ac.rs](mailto://kristina.bikit@df.uns.ac.rs)<br>
 +381 (21) 485 2815
