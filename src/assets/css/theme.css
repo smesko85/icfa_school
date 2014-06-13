@@ -43,19 +43,24 @@ body.loader, html.loader {
     margin:0;
     padding:0;
     overflow:hidden;
-    background-color:#bfffed;
+    background-color:#d7e1f4;
+    height:100%;
 }
 
+body.loader .navbar {
+    display:none;
+}
 /* Loader wrapper */
 .wrapper.loader{
     opacity:1;
-    position:absolute;
-    top:0%;
-    left:0%;
+    position:fixed;
+    top:0;
+    left:0;
     z-index:1024;
     background:#d7e1f4;
-    height:100%;
-    width:100%;
+    margin: auto;
+    bottom:0;
+    right:0;
 }
 
 
@@ -465,6 +470,7 @@ margin: 5px 0;
     border-bottom-width:1px;
     margin-bottom:0;
     min-width:200px;
+    transition: all 0.2s;
 }
 
 
@@ -494,6 +500,7 @@ margin: 5px 0;
     .nav > li {
         float:none;
         display:inline-block;
+        margin-right:7px;
     }
 
     .navbar-nav{
@@ -609,6 +616,9 @@ margin: 5px 0;
 /* Hero */
 .jumbotron{
     border-bottom: 2px rgba(0,0,0,0.2) solid;
+    margin-bottom:0;
+    margin-left:-15px;
+    margin-right:-15px;
 }
 
 .container .jumbotron,.container-fluid .jumbotron{
@@ -744,7 +754,7 @@ margin: 5px 0;
 }
 
 #important-info {
-    margin:0.5em -0.8em -0.8em;
+    margin:0.5em -0.8em 0.2em;
     font-size: 1.2em;
     text-align:center;
     font-weight: bold;
@@ -753,6 +763,11 @@ margin: 5px 0;
     animation-delay: 5s;
 }
 
+@media (min-width: 768px) {
+    #important-info {
+        margin:0.5em -0.8em 0em;
+    }
+}
 /* Footer *************************************************************************************/
 #footer {
     font-size: 0.8em;
@@ -779,6 +794,11 @@ margin: 5px 0;
     -ms-user-select: none;
     -o-user-select: none;
 }
+
+#footer .panel.panel-default{
+    background-color: #aaf;
+    background-color:rgba(200,200,255,0.6);
+}
 /* Images
 *********************************************************************************/
 
@@ -796,30 +816,32 @@ margin: 5px 0;
 
 /* Home page *********************************************************************************/
 .jumbotron #home-hero {
+    background-color: transparent;
     background-image: url('../img/dunav.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     padding: 1em;
     opacity: 0.8;
-    border-radius: 5px;
-    margin: -20px;
-    border-bottom: 2px rgba(0,0,0,0.7) solid;
-    border-right: 2px rgba(0,0,0,0.7) solid;
-    border-left: 2px  rgba(255,255,255,0.7) solid;
-    border-top: 2px rgba(255,255,255,0.7)  solid;
+    border-radius: 0;
+    border: none;
+/*    margin: -20px;*/
+    
 }
 
 @media (min-width: 768px) {
-    #home-hero {
+    .jumbotron #home-hero {
         padding: 1em;
         /*padding-left: 50%;*/
-        border-radius: 0;
-        border: none;
         min-height: 20em;
+        border-radius: 5px;
+        border-bottom: 2px rgba(0,0,0,0.7) solid;
+        border-right: 2px rgba(0,0,0,0.7) solid;
+        border-left: 2px  rgba(255,255,255,0.7) solid;
+        border-top: 2px rgba(255,255,255,0.7)  solid;
     }
 
-    #home-hero > div {
+    .jumbotron #home-hero > div {
         border-radius: 5px;    
         background: rgba(255,255,255,0.6);
         /*float: none;*/
@@ -845,7 +867,7 @@ margin: 5px 0;
     }*/
 }
 
-#home-hero > div {
+.jumbotron #home-hero > div {
     background: rgba(255,255,255,0.6);
     padding: 1em;
     height:100%;
@@ -996,25 +1018,43 @@ input#mc-embedded-subscribe.btn{
 }
 
 /* Links ********************************************************************************************/
-#useful-links + ul > li {
-    list-style: none;
+#useful-links + ul {
+    padding-left: 1em;
 }
 
-#useful-links + ul > li:before{
+#useful-links + ul > li {
+    list-style: none;
+    padding-left:0;
+}
+
+#useful-links + ul > li > a:before{
     content: "\00bb";
-    left:2em;
+    left:1em;
     position: absolute;
 }
 
 #useful-links + ul > li > a > em {
     float:right;
     text-decoration: underline;
+    display:block;
+}
+
+@media (max-width: 768px){
+    #useful-links + ul > li > a > em {
+        display:none;
+    }
 }
 
 #useful-links + ul > li > a {
-  
+    float: left;  
+    display: block;
+    width:100%;
 }
 
 #useful-links + ul > li > a:hover {
     /*background: rgba(255,255,255,0.5);*/
+}
+
+#weather-widget img{
+    width:100%;
 }
