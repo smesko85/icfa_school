@@ -1,12 +1,8 @@
 ﻿## Laboratories Program
 
-* Characterization of  Silicon detectors with ALIBAVA
-* Characterization of  Germaniun detector
-* Micro-pattern gaseous detectors  
-* Characterization of RPC 
-* Characterization of SiPM and MEDIPIX    
-* Reprogrammable Logic – FPGA  _(to be confirmed)_
-* Data Acquisition with LabVIEW  _(to be confirmed)_
-* GEANT4 for medical application _(to be confirmed)_
-* Data Base _(to be confirmed)_
-
+* Silicon detectors - **R.Bates, Glascow Univ. UK, L.Eklund, CERN**
+* Si detectors characterization with ALIBAVA system - **G.Casse, Un. of Liverpool**
+* MPGD and RPC - **M.Capeans, R.Guida and E.Olivieri, CERN**
+* Ring Imaging Cerenkov Detectors - **S.Korpar and R.Pestotnik, J.S.Inst. Ljubljana, Slovenia **
+* Characterization of SiPM - **D.Danheim, CERN**
+* Reprogrammable Logic in High-Energy Physics Experiments – **D.Gigi, CERN**

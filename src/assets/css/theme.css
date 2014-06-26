@@ -887,6 +887,8 @@ margin: 5px 0;
 
 #main.topics  ul li{
     list-style:none;
+    margin-bottom:0.6em;
+    line-height:1.1em;
 }
 
 #main.topics  ul li:before{
@@ -895,7 +897,17 @@ margin: 5px 0;
     position: absolute;
 }
 
-#laboratories-program  ~ ul em{
+#review-talks ~ ul strong,
+#lectures-program ~ ul strong,
+#laboratories-program ~ ul strong {
+    font-weight: normal;
+    font-style: italic;
+    font-size: 0.95em;
+}
+
+#review-talks  ~ ul em,
+#lectures-program  ~ ul em,
+#laboratories-program  ~ ul em {
     color: rgba(255,0,0,0.7);
     white-space: nowrap;
     vertical-align: baseline;
