@@ -7,4 +7,4 @@ Having invested considerable efforts in intensifying international cooperation a
 
 ---
 
-More info about Univeristy of Novi Sad available at [Official website](www.uns.ac.rs/en)
+More info about Univeristy of Novi Sad available at [Official website](http://www.uns.ac.rs/en)
