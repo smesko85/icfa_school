@@ -128,6 +128,7 @@ margin: 5px 0;
 /* Navbar ****************************************************************************/
 .navbar-header{
     float:none;
+    transform: translate3d(0,0,0);
 }
 
 .navbar-collapse{
@@ -135,9 +136,17 @@ margin: 5px 0;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    transform: translate3d(0,0,0);
+    transition: all 0.5s;
+    position: absolute;
+    width:100%;
+    background-image: linear-gradient(rgb(176, 194, 232) 0px, rgb(136, 164, 221) 100%);
+    border-bottom: 2px rgba(0,0,0,0.5) solid;
 }
 
-
+.navbar-collapse.in {
+    min-height: 21em;
+}
 /* Logo *******************************************************************************/
 .navbar-brand.logo{
     /*    margin:10px 2px;*/
@@ -428,9 +437,9 @@ margin: 5px 0;
         background: url('../img/knitted-netting.png');
         opacity:0.3;
         top:0;
-        left:0;
-        bottom: 0;
-        right:0;
+        left:-15px;
+        bottom: -80px;
+        right:-15px;
         position: absolute;
         z-index:-1;
     }
@@ -482,7 +491,12 @@ margin: 5px 0;
     .navbar-collapse{
         /* margin-bottom: 3em;*/
         text-align:center;
+        position: static;
+        width: initial;
+        background-image: none;
+        border-bottom: none;
     }
+
     .navbar{
         /*        padding-left:20px;*/
         /*        padding-right:20px;*/
@@ -716,6 +730,7 @@ margin: 5px 0;
 #carousel {
     padding:0;
     border-width:10px;
+    transform: translate3d(0,0,0);
 }
 
 #carousel > .carousel-inner {
@@ -770,6 +785,7 @@ margin: 5px 0;
     -webkit-animation-iteration-count:2;
     padding: 0.5em;
     margin: 0.5em 0;
+    tranform: translate3d(0,0,0);
 }
 
 @media (min-width: 768px) {
@@ -926,6 +942,14 @@ margin: 5px 0;
     display: inline-block;
     */
 }
+
+#main.topics table.programme, #main.topics table.programme th, #main.topics table.programme td {
+    text-align: center;
+    border: 1px solid gray;
+}
+
+
+
 
 /* Contact **************************************************************************************/
 #contact {
