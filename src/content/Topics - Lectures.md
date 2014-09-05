@@ -2,7 +2,7 @@
 
 * Particles Interactions with matter - 2h – **W.Riegler, CERN** 
 * Silicon Detectors for HEP and Nuclear Physics - 2h – **J.Ninkovic – Max Planck Society Semiconductor Laboratory, Munich, Germany**
-* Electromagnetic and Hadronic Calorimetry - 2h – **R. Paramatti, University of Roma 1, Italy**
+* Electromagnetic and Hadronic Calorimetry - 2h – **R. Paramatti, INFN Rome, Italy**
 * Gaseous Detectors - 2h – **M.Titov, IRFU, France**
 * Particle Identification and photo-detectors - 2h – **S. Kopar, J.S.Institute Ljubljana, Slovenia**
 * Electronics & Signal Processing - 2h - **M.Friedl, HEPHY, Vienna, Austria**

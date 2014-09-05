@@ -63,10 +63,9 @@
     {{> navbar-fixed-top }}
     
     <div class="container-fluid theme-showcase" role="main">
-        <aside id="important-info">
+        <!-- <aside id="important-info">
             <p class="alert alert-success animated bounce">New: List of participants is now available <a href="/participants.html">here<a></p>
-        </aside>
-        </aside>
+        </aside> -->
         
         {{> body }}
 
@@ -74,20 +73,23 @@
 
     {{> footer }}
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    
+    <!-- build:js assets/js/main.js -->
     <script src="{{assets}}/js/jquery-1.11.0.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="{{assets}}/js/bootstrap.min.js"></script>
     <script src="{{assets}}/js/modernizr.js"></script>
-    <script src="{{assets}}/js/loader.js"></script>
     <script src="{{assets}}/js/fastclick.js"></script>
     <script src="{{assets}}/js/jquery.unveil.js"></script>
+    <!-- /build -->
 
     <script type="text/javascript">
-        $(window).load(function() {
-            $("#canvasloader-container").removeClass("loader");
-            $("html").removeClass("loader");
-            $("body").removeClass("loader");
+        document.addEventListener('DOMContentLoaded', function(){
+            cloader=document.getElementById("canvasloader-container")
+            cloader.classList.remove("loader");
+            cloader=document.getElementsByTagName("html")
+            cloader[0].classList.remove("loader");
+            cloader=document.getElementsByTagName("body")
+            cloader[0].classList.remove("loader");
             cl.hide();
         });
 
@@ -97,6 +99,12 @@
             $(function() {
                 FastClick.attach(document.body);
             });
+
+            var directions = $('#coming-to-serbia-by-plane ~ h4');
+            directions.next().hide();
+            directions.click(function(){$(this).next().slideToggle("");});
+
+            $("img").trigger("unveil");
         });
     </script>
 </body>

@@ -72,12 +72,9 @@ module.exports = function(grunt) {
 
     uglify: {
       dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= config.src %>',
-          src: ['assets/js/*.js'],
-          dest: '<%= config.dist %>'
-        }]
+        files: {
+          '<%= config.dist %>/assets/js/main.js': ['<%= config.src %>/assets/js/modernizer.js','<%= config.src %>/assets/js/jquery-1.11.0.min.js','<%= config.src %>/assets/js/bootstrap.min.js','<%= config.src %>/assets/js/fastclick.js','<%= config.src %>/assets/js/jquery.unveil.js']
+        }
       }
     },
 
@@ -110,7 +107,8 @@ module.exports = function(grunt) {
           cwd: '<%= config.src %>/assets/fonts/',
           src: ['**'],
           dest: '<%= config.dist %>/assets/fonts/'
-        },{src: '<%= config.src %>/site.appcache', dest: '<%= config.dist %>/site.appcache'}
+        },{src: '<%= config.src %>/site.appcache', dest: '<%= config.dist %>/site.appcache'},
+        {src: '<%= config.src %>/assets/js/heartcode-canvasloader-min-0.9.1.js', dest: '<%= config.dist %>//assets/js/heartcode-canvasloader-min-0.9.1.js'}
         ]
       }
     },
