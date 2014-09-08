@@ -52,6 +52,7 @@ module.exports = function(grunt) {
         files: {
           '<%= config.dist %>/assets/css/bootstrap.css': ['<%= config.src %>/assets/css/{bootstrap*,animate}.css'],
           '<%= config.dist %>/assets/css/theme.css': ['<%= config.src %>/assets/css/theme.css'],
+          '<%= config.dist %>/assets/css/pace.css': ['<%= config.src %>/assets/css/pace.css'],
         }
       }
     },
@@ -107,8 +108,14 @@ module.exports = function(grunt) {
           cwd: '<%= config.src %>/assets/fonts/',
           src: ['**'],
           dest: '<%= config.dist %>/assets/fonts/'
+        },
+        {
+          expand: true,
+          cwd: '<%= config.src %>/assets/talks/',
+          src: ['**'],
+          dest: '<%= config.dist %>/assets/talks/'
         },{src: '<%= config.src %>/site.appcache', dest: '<%= config.dist %>/site.appcache'},
-        {src: '<%= config.src %>/assets/js/heartcode-canvasloader-min-0.9.1.js', dest: '<%= config.dist %>//assets/js/heartcode-canvasloader-min-0.9.1.js'}
+        {src: '<%= config.src %>/assets/js/pace.min.js', dest: '<%= config.dist %>//assets/js/pace.min.js'}
         ]
       }
     },

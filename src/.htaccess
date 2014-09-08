@@ -7,3 +7,53 @@
     ModPagespeedEnableFilters convert_png_to_jpeg,convert_jpeg_to_webp
     ModPagespeedEnableFilters collapse_whitespace,remove_comments
 </IfModule>
+
+<IfModule mod_deflate.c>
+	SetOutputFilter DEFLATE
+	
+
+	# Don't compress binaries
+   	SetEnvIfNoCase Request_URI .(?:exe|t?gz|zip|iso|tar|bz2|sit|rar) no-gzip dont-vary
+
+   	# Don't compress images
+   	SetEnvIfNoCase Request_URI .(?:gif|jpe?g|jpg|ico|png)  no-gzip dont-vary
+
+
+
+   	# Don't compress PDFs
+   	SetEnvIfNoCase Request_URI .pdf no-gzip dont-vary
+
+
+
+   	# Don't compress flash files (only relevant if you host your own videos)
+   	SetEnvIfNoCase Request_URI .flv no-gzip dont-vary
+
+
+
+   	# Netscape 4.X has some problems
+   	BrowserMatch ^Mozilla/4 gzip-only-text/html
+
+
+
+   	# Netscape 4.06-4.08 have some more problems
+   	BrowserMatch ^Mozilla/4.0[678] no-gzip
+
+
+
+   	# MSIE masquerades as Netscape, but it is fine
+   	BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+
+
+
+   	# Make sure proxies don't deliver the wrong content
+   	Header append Vary User-Agent env=!dont-vary
+
+
+
+   	# Setup custom deflate log
+   	DeflateFilterNote Input instr
+   	DeflateFilterNote Output outstr
+   	DeflateFilterNote Ratio ratio
+   	LogFormat '"%r" %{outstr}n/%{instr}n %{ratio}n%%' DEFLATE
+   	CustomLog logs/deflate_log DEFLATE
+</IfModule>

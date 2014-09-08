@@ -22,8 +22,10 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{assets}}/img/unsICO.ico" type="image/x-icon">
 
-    <script src="{{assets}}/js/heartcode-canvasloader-min-0.9.1.js"></script>
-        
+    <!--<script src="{{assets}}/js/heartcode-canvasloader-min-0.9.1.js"></script>-->
+
+    <script src="{{assets}}/js/pace.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{assets}}/css/pace.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -35,10 +37,10 @@
   </head>
   <body>
     <!-- Create a div which will be the canvasloader wrapper -->    
-    <div id="canvasloader-container" class="wrapper"></div>
+    <!-- <div id="canvasloader-container" class="wrapper"></div> -->
         
     <!-- This script creates a new CanvasLoader instance and places it in the wrapper div -->
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
         var cl = new CanvasLoader('canvasloader-container');
         cl.setColor('#043834'); // default is '#000000'
         cl.setShape('spiral'); // default is 'oval'
@@ -58,14 +60,14 @@
         document.getElementsByTagName('body')[0].className+=' loader';
         document.getElementsByTagName('html')[0].className+=' loader';
         document.getElementById('canvasloader-container').className+=' loader';
-    </script>
+    </script>-->
 
     {{> navbar-fixed-top }}
     
     <div class="container-fluid theme-showcase" role="main">
-        <!-- <aside id="important-info">
-            <p class="alert alert-success animated bounce">New: List of participants is now available <a href="/participants.html">here<a></p>
-        </aside> -->
+        <aside id="important-info">
+            <p class="alert alert-success animated bounce">New: Check and download talks presentation on a <a href="/topics.html">topics page!<a></p>
+        </aside>
         
         {{> body }}
 
@@ -83,7 +85,7 @@
     <!-- /build -->
 
     <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function(){
+        /*document.addEventListener('DOMContentLoaded', function(){
             cloader=document.getElementById("canvasloader-container")
             cloader.classList.remove("loader");
             cloader=document.getElementsByTagName("html")
@@ -91,7 +93,7 @@
             cloader=document.getElementsByTagName("body")
             cloader[0].classList.remove("loader");
             cl.hide();
-        });
+        });*/
 
         $(document).ready(function(){
             $("img").unveil();
