@@ -25,6 +25,7 @@
     <!--<script src="{{assets}}/js/heartcode-canvasloader-min-0.9.1.js"></script>-->
 
     <script src="{{assets}}/js/pace.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="{{assets}}/css/pace.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -76,8 +77,13 @@
     {{> footer }}
 
     
+    <script>
+        Pace.stop();
+    </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/jquery-1.11.0.min.js"><\/script>')</script>
+
     <!-- build:js assets/js/main.js -->
-    <script src="{{assets}}/js/jquery-1.11.0.min.js"></script>
     <script src="{{assets}}/js/bootstrap.min.js"></script>
     <script src="{{assets}}/js/modernizr.js"></script>
     <script src="{{assets}}/js/fastclick.js"></script>

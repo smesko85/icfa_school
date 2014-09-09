@@ -74,7 +74,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          '<%= config.dist %>/assets/js/main.js': ['<%= config.src %>/assets/js/modernizer.js','<%= config.src %>/assets/js/jquery-1.11.0.min.js','<%= config.src %>/assets/js/bootstrap.min.js','<%= config.src %>/assets/js/fastclick.js','<%= config.src %>/assets/js/jquery.unveil.js']
+          '<%= config.dist %>/assets/js/main.js': ['<%= config.src %>/assets/js/modernizer.js','<%= config.src %>/assets/js/bootstrap.min.js','<%= config.src %>/assets/js/fastclick.js','<%= config.src %>/assets/js/jquery.unveil.js']
         }
       }
     },
@@ -115,7 +115,8 @@ module.exports = function(grunt) {
           src: ['**'],
           dest: '<%= config.dist %>/assets/talks/'
         },{src: '<%= config.src %>/site.appcache', dest: '<%= config.dist %>/site.appcache'},
-        {src: '<%= config.src %>/assets/js/pace.min.js', dest: '<%= config.dist %>//assets/js/pace.min.js'}
+        {src: '<%= config.src %>/assets/js/pace.min.js', dest: '<%= config.dist %>/assets/js/pace.min.js'},
+        {src: '<%= config.src %>/assets/js/jquery-1.11.0.min.js', dest:'<%= config.dist %>/assets/js/jquery-1.11.0.min.js'},
         ]
       }
     },
@@ -206,7 +207,7 @@ module.exports = function(grunt) {
 	       },
 	       src: '<%= config.dist %>',
 	       dest: '/var/www/cern-danube-school/html',
-	       exclusions: []
+	       exclusions: ['*pdf']
         }
     },
 
