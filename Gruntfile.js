@@ -51,8 +51,7 @@ module.exports = function(grunt) {
         },
         files: {
           '<%= config.dist %>/assets/css/bootstrap.css': ['<%= config.src %>/assets/css/{bootstrap*,animate}.css'],
-          '<%= config.dist %>/assets/css/theme.css': ['<%= config.src %>/assets/css/theme.css'],
-          '<%= config.dist %>/assets/css/pace.css': ['<%= config.src %>/assets/css/pace.css'],
+          '<%= config.dist %>/assets/css/theme.css': ['<%= config.src %>/assets/css/theme.css','<%= config.src %>/assets/css/pace.css'],
         }
       }
     },
@@ -62,8 +61,10 @@ module.exports = function(grunt) {
         options: {
           ignore: ['.navbar-brand','.logo','.header-logos','.navbar-toggle','.collapsed','.collapse',
                     '.navbar-collapse.collapse','.in','.collapsing','.collapse.in','.navbar-collapse.in',
-                    '.navbar-toggle:focus','.hidden-xs','.carousel-inner','.carousel-inner > .item'],
-          ignoreSheets: ['assets/css/theme.css']
+                    '.navbar-toggle:focus','.hidden-xs','.carousel-inner','.carousel-inner > .item','.carousel-inner>.prev',
+                    '.carousel-inner>.next','.carousel-inner>.active'],
+          ignoreSheets: ['assets/css/theme.css'],
+          stylesheets: ['assets/css/bootstrap.css'],
         },
         files: {
           '<%= config.dist %>/assets/css/bootstrap.css': ['<%= config.dist %>/{contact,index,links,organization,registration,scope,topics,travel,venue}.html']
@@ -126,7 +127,7 @@ module.exports = function(grunt) {
         browsers: ['> 1%','last 25 versions']
       },
       dist: {
-        src: ['<%= config.dist %>/assets/css/bootstrap.css','<%= config.dist %>/assets/css/theme.css']
+        src: ['<%= config.dist %>/assets/css/theme.css']
       }
     },
 
@@ -198,7 +199,7 @@ module.exports = function(grunt) {
       }
     },
 
-    'ftp-deploy': {
+    'ftpush': {
         build: {
             auth: {
                 host: 'cern-danube-school.uns.ac.rs',
@@ -207,7 +208,6 @@ module.exports = function(grunt) {
 	       },
 	       src: '<%= config.dist %>',
 	       dest: '/var/www/cern-danube-school/html',
-	       exclusions: ['*pdf']
         }
     },
 
@@ -221,7 +221,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-ftp-deploy');
+  grunt.loadNpmTasks('grunt-ftpush');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-newer');
   grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -238,8 +238,6 @@ module.exports = function(grunt) {
     'assemble',
     'uglify',
     'processhtml',
-    'cssmin',
-    'htmlmin',
     'copy',
     'connect:livereload',
     'watch'
@@ -261,6 +259,6 @@ module.exports = function(grunt) {
     'build'
   ]);
 
-  grunt.registerTask('deploy', ['build','ftp-deploy']);
+  grunt.registerTask('deploy', ['build','ftpush']);
 
 };

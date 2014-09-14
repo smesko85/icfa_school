@@ -1,7 +1,4 @@
 /* Typography *****************************************************************/
-@import url(http://fonts.googleapis.com/css?family=Kreon:300,400,700);
-@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,latin-ext&subset=latin,latin-ext);
-
 body {
     font-size: 18px;
     -webkit-text-stroke: .15px;
@@ -819,7 +816,7 @@ margin: 5px 0;
         -webkit-animation-iteration-count:2;
         padding: 0.5em;
         margin: 0.5em 0;
-        tranform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
     }
 
     @media (min-width: 768px) {
