@@ -127,7 +127,9 @@ margin: 5px 0;
     float:none;
     transform: translate3d(0,0,0);
 }
-
+.navbar-toggle {
+    z-index:999;
+}
 .navbar-collapse{
  user-select: none;
  -webkit-user-select: none;
@@ -142,7 +144,8 @@ margin: 5px 0;
 }
 
 .navbar-collapse.in {
-    min-height: 21em;
+    min-height: 24em;
+    overflow-y:hidden;
 }
 /* Logo *******************************************************************************/
 .navbar-brand.logo{
@@ -485,6 +488,10 @@ margin: 5px 0;
         border-bottom: none;
     }
 
+    .navbar-collapse.collapse.in {
+        min-height:0; 
+    }
+    
     .navbar-collapse{
         /* margin-bottom: 3em;*/
         text-align:center;
@@ -553,7 +560,7 @@ margin: 5px 0;
 
 }
 
-@media (min-width: 901px){ 
+@media (min-width: 920px){ 
     .navbar-nav {
         font-size: 1em;
         /*        margin:0 -15px;*/
@@ -1134,3 +1141,17 @@ input#mc-embedded-subscribe.btn{
 #weather-widget img{
     width:100%;
 }
+
+/* Gallery ********************************************************************************************/
+ #lightGallery {
+   padding-left:0;
+   transform: translate3d(0,0,0);
+ }
+ 
+ #lightGallery li {
+   list-style: none;
+ }
+ 
+ #lightGallery li img{
+   cursor: pointer;
+ }  

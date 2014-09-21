@@ -52,6 +52,7 @@ module.exports = function(grunt) {
         files: {
           '<%= config.dist %>/assets/css/bootstrap.css': ['<%= config.src %>/assets/css/{bootstrap*,animate}.css'],
           '<%= config.dist %>/assets/css/theme.css': ['<%= config.src %>/assets/css/theme.css','<%= config.src %>/assets/css/pace.css'],
+          '<%= config.dist %>/assets/css/lightGallery.css': ['<%= config.src %>/assets/css/lightGallery.css'],
         }
       }
     },
@@ -75,7 +76,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          '<%= config.dist %>/assets/js/main.js': ['<%= config.src %>/assets/js/modernizer.js','<%= config.src %>/assets/js/bootstrap.min.js','<%= config.src %>/assets/js/fastclick.js','<%= config.src %>/assets/js/jquery.unveil.js']
+          '<%= config.dist %>/assets/js/main.js': ['<%= config.src %>/assets/js/modernizer.js','<%= config.src %>/assets/js/bootstrap.min.js','<%= config.src %>/assets/js/fastclick.js','<%= config.src %>/assets/js/jquery.unveil.js','<%= config.src %>/assets/js/lightGallery.js']
         }
       }
     },
@@ -85,7 +86,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: '<%= config.src %>/',
-          src: ['assets/img/{,*/}*.{png,jpg,gif}'],
+          src: ['assets/img/{,*/,*/*/}*.{png,jpg,gif}'],
           dest: '<%= config.dist %>/'
         }]
       }
@@ -137,7 +138,7 @@ module.exports = function(grunt) {
         tasks: ['assemble','processhtml','htmlmin']
       },
       imagemin: {
-        files: ['<%= config.src %>/assets/img/{,*/}*.{png,jpg,gif}'],
+        files: ['<%= config.src %>/assets/img/{,*/,*/*/}*.{png,jpg,gif}'],
         tasks: ['newer:imagemin']
       },
       copy: {
@@ -168,7 +169,7 @@ module.exports = function(grunt) {
 
     connect: {
       options: {
-        port: 9000,
+        port: 8080,
         livereload: 35729,
         // change this to '0.0.0.0' to access the server from outside
         hostname: '0.0.0.0'
@@ -238,6 +239,7 @@ module.exports = function(grunt) {
     'assemble',
     'uglify',
     'processhtml',
+    'cssmin',
     'copy',
     'connect:livereload',
     'watch'

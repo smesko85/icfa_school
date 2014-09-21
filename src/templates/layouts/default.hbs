@@ -14,8 +14,8 @@
         eCSSential({
             "all": "{{assets}}/css/bootstrap.css",
             "screen": "{{assets}}/css/theme.css",
-            "(min-width:1em)": "http://fonts.googleapis.com/css?family=Kreon:300,400,700",
-            "(min-width:2em)": "http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,latin-ext&subset=latin,latin-ext"
+            "(min-width:1em)": "//fonts.googleapis.com/css?family=Kreon:300,400,700",
+            "(min-width:2em)": "//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,latin-ext&subset=latin,latin-ext"
         });
     </script>
     <noscript>
@@ -34,8 +34,8 @@
     
     <!-- Custom styles for this template -->
     <link href="{{assets}}/css/theme.css" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Kreon:300,400,700" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,latin-ext&subset=latin,latin-ext" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Kreon:300,400,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,latin-ext&subset=latin,latin-ext" rel="stylesheet">
     </noscript>
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{assets}}/img/unsICO.ico" type="image/x-icon">
@@ -87,7 +87,7 @@
     
     <div class="container-fluid theme-showcase" role="main">
         <aside id="important-info">
-            <p class="alert alert-success animated bounce">New: Check and download talks presentation on a <a href="/topics.html">topics page!<a></p>
+            <p class="alert alert-success animated bounce">School ended. Check out our gallery at <a href="/gallery.html">gallery page!<a></p>
         </aside>
         
         {{> body }}
@@ -101,7 +101,7 @@
     {{> footer }}
 
     
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/jquery-1.11.0.min.js"><\/script>')</script>
 
     <!-- build:js assets/js/main.js -->
@@ -133,7 +133,8 @@
             directions.next().hide();
             directions.click(function(){$(this).next().slideToggle("");});
 
-            $("img").trigger("unveil");
+            $("img").trigger("unveil");1
+            $("#lightGallery").lightGallery();
         });
     </script>
 </body>
