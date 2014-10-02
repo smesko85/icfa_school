@@ -968,9 +968,9 @@ margin: 5px 0;
         font-size: 0.95em;
     }
 
-    #review-talks  ~ ul em,
-    #lectures-program  ~ ul em,
-    #laboratories-program  ~ ul em {
+    #review-talks ~ ul em,
+    #lectures-program ~ ul em,
+    #laboratories-program ~ ul em {
         color: rgba(255,0,0,0.7);
         white-space: nowrap;
         vertical-align: baseline;

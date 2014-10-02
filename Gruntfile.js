@@ -116,6 +116,12 @@ module.exports = function(grunt) {
           cwd: '<%= config.src %>/assets/talks/',
           src: ['**'],
           dest: '<%= config.dist %>/assets/talks/'
+        },
+        {
+          expand: true,
+          cwd: '<%= config.src %>/assets/labs/',
+          src: ['**'],
+          dest: '<%= config.dist %>/assets/labs/'
         },{src: '<%= config.src %>/site.appcache', dest: '<%= config.dist %>/site.appcache'},
         {src: '<%= config.src %>/assets/js/pace.min.js', dest: '<%= config.dist %>/assets/js/pace.min.js'},
         {src: '<%= config.src %>/assets/js/jquery-1.11.0.min.js', dest:'<%= config.dist %>/assets/js/jquery-1.11.0.min.js'},
