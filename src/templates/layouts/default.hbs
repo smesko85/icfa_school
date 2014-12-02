@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en" class="no-js" manifest="site.appcache">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -15,7 +15,8 @@
             "all": "{{assets}}/css/bootstrap.css",
             "screen": "{{assets}}/css/theme.css",
             "(min-width:1em)": "//fonts.googleapis.com/css?family=Kreon:300,400,700",
-            "(min-width:2em)": "//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,latin-ext&subset=latin,latin-ext"
+            "(min-width:2em)": "//fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,latin-ext&subset=latin,latin-ext",
+            "(min-width:1.2em)": "{{assets}}/css/lightGallery.css"
         });
     </script>
     <noscript>
@@ -133,8 +134,35 @@
             directions.next().hide();
             directions.click(function(){$(this).next().slideToggle("");});
 
-            $("img").trigger("unveil");1
-            $("#lightGallery").lightGallery();
+            $("img").trigger("unveil");
+            $("#lightGallery").lightGallery({preload: 5});
+            
+            $("ul.nav li a").click(function(event){
+                event.preventDefault();
+                $("ul.nav li.active").removeClass("active");
+                $(this).blur().parent().addClass("active");
+                history.pushState("data","", $(this).attr("href"));
+                document.title = $(this).text() +  " | Danube School on Instrumentation in Elementary Particle & Nuclear Physics";
+                
+                $(".navbar-collapse").removeClass("in");
+                
+                $("div.container-fluid.theme-showcase[role='main']")
+                    .load($(this).attr("href") + " div.container-fluid.theme-showcase[role='main'] > *",
+                    function(){
+                        $(".carousel, .carousel2").carousel();
+                        $("img").unveil();
+                        $("img").trigger("unveil");
+                        
+                        $("#lightGallery").lightGallery({preload: 5});
+                        
+                        directions = $("#coming-to-serbia-by-plane ~ h4");
+                        if (directions.length !== 0 ) {
+                            directions.next().hide();
+                            directions.click(function(){$(this).next().slideToggle("");});
+                        }
+                        
+                    }).fadeIn();
+            });
         });
     </script>
 </body>
