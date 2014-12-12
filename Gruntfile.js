@@ -76,7 +76,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          '<%= config.dist %>/assets/js/main.js': ['<%= config.src %>/assets/js/modernizer.js','<%= config.src %>/assets/js/bootstrap.min.js','<%= config.src %>/assets/js/fastclick.js','<%= config.src %>/assets/js/jquery.unveil.js','<%= config.src %>/assets/js/lightGallery.js']
+          '<%= config.dist %>/assets/js/main.js': ['<%= config.src %>/assets/js/modernizr.js','<%= config.src %>/assets/js/bootstrap.min.js','<%= config.src %>/assets/js/fastclick.js','<%= config.src %>/assets/js/jquery.unveil.js','<%= config.src %>/assets/js/lightGallery.js']
         }
       }
     },

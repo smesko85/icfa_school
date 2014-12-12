@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    
     <title>{{title}} | {{site.title}}</title>
     
     <script>
@@ -124,45 +128,73 @@
         });*/
 
         $(document).ready(function(){
-            $("img").unveil();
-            
             $(function() {
                 FastClick.attach(document.body);
             });
 
-            var directions = $('#coming-to-serbia-by-plane ~ h4');
-            directions.next().hide();
-            directions.click(function(){$(this).next().slideToggle("");});
-
-            $("img").trigger("unveil");
-            $("#lightGallery").lightGallery({preload: 5});
+                    
+            var initPage = function(){
+                $("img").unveil();
+                $(".carousel, .carousel2").carousel();
+                
+                var directions = $("#coming-to-serbia-by-plane ~ h4");
+                if (directions.length !== 0 ) {
+                    directions.next().hide();
+                    directions.click(function(){$(this).next().slideToggle("");});
+                }
+    
+                $("img").trigger("unveil");
+                $("#lightGallery").lightGallery({preload: 5});
+            }
+            
+            
+            var loadPage = function(href, title){
+                if (Modernizr.history){
+                    if (title){
+                        history.pushState("data", title, href);
+                        document.title = title +  " | Danube School on Instrumentation in Elementary Particle & Nuclear Physics";
+                    } else {
+                        var re = new RegExp("^http(?:|s):\/\/.*\/(.*)\.html$");
+                        title = href.replace(re,"$1");
+                        title = title.charAt(0).toUpperCase() + title.substr(1);
+                        
+                        if (title == "Index"){
+                            title = "Home";
+                        } else if (title == "Travel") {
+                            title = "Travel & Accomodation"
+                        }
+                        
+                        document.title = title + " | Danube School on Instrumentation in Elementary Particle & Nuclear Physics";
+                        
+                        re = new RegExp("^http(?:|s):\/\/.*\/(.*\.html)$");
+                        href = href.replace(re,"$1");
+                    }
+                    //console.log("Title: " + title);
+                    //console.log("Location: " + location.href);
+                    
+                    $("div.container-fluid.theme-showcase[role='main']")
+                    .load(href + " div.container-fluid.theme-showcase[role='main'] > *", function(){initPage()})
+                    .fadeIn();
+                    
+                    $("ul.nav li.active").removeClass("active");
+                    $("ul.nav li a[href*=\"" + href + "\"]").blur().parent().addClass("active");
+                    $(".navbar-collapse").removeClass("in");
+                } else {
+                    location.href = href;
+                }
+            }
+            
+            initPage();
+            
+            $(window).on("popstate", function(e) {
+                  loadPage(location.href);
+             });
             
             $("ul.nav li a").click(function(event){
                 event.preventDefault();
-                $("ul.nav li.active").removeClass("active");
-                $(this).blur().parent().addClass("active");
-                history.pushState("data","", $(this).attr("href"));
-                document.title = $(this).text() +  " | Danube School on Instrumentation in Elementary Particle & Nuclear Physics";
-                
-                $(".navbar-collapse").removeClass("in");
-                
-                $("div.container-fluid.theme-showcase[role='main']")
-                    .load($(this).attr("href") + " div.container-fluid.theme-showcase[role='main'] > *",
-                    function(){
-                        $(".carousel, .carousel2").carousel();
-                        $("img").unveil();
-                        $("img").trigger("unveil");
-                        
-                        $("#lightGallery").lightGallery({preload: 5});
-                        
-                        directions = $("#coming-to-serbia-by-plane ~ h4");
-                        if (directions.length !== 0 ) {
-                            directions.next().hide();
-                            directions.click(function(){$(this).next().slideToggle("");});
-                        }
-                        
-                    }).fadeIn();
+                loadPage($(this).attr("href"),$(this).text());
             });
+                
         });
     </script>
 </body>
