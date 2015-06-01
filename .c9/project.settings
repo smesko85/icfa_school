@@ -13,8 +13,13 @@
     "find.nak": {
         "@searchLimit": 100
     },
+    "general": {
+        "@stripws": false
+    },
     "language": {
+        "@eslintrc": "true",
         "@instanceHighlight": "true",
+        "@semi": "true",
         "@undeclaredVars": "true",
         "@unusedFunctionArgs": "false",
         "@warnLevel": "info"
